@@ -1,3 +1,4 @@
+package rbenv
 package vcs
 theme chain
 theme default
