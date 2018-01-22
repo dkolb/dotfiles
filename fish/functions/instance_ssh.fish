@@ -19,9 +19,9 @@ function instance_ssh --description 'SSH to private IP of an instance.'
 
   set instance_ip (aws_instance_ip $argv[2])
 
-  if test -z "$argv[3]"
-    ssh -i "$sshkey" "ec2-user@$instance_ip"
-  else
+  if test (count $argv) -gt 2; and test -n "$argv[3]"
     ssh -i "$sshkey" "$argv[3]@$instance_ip"
+  else
+    ssh -i "$sshkey" "ec2-user@$instance_ip"
   end
 end
