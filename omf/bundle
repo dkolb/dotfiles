@@ -1,5 +1,6 @@
 package rbenv
 package vcs
+package z
 theme chain
 theme default
 theme simple-ass-prompt
