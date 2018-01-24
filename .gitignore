@@ -1,2 +1,4 @@
 fishd.*
 puppet/modules
+*.swp
+*.swo
