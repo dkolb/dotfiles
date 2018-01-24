@@ -7,7 +7,7 @@ timedatectl set-ntp true
 # Partitioning
 parted /dev/sda --script mklabel gpt
 parted /dev/sda --script mkpart primary 0% 256MiB
-parted /dev/sda --script mkpart 256MiB 100%
+parted /dev/sda --script mkpart primary 256MiB 100%
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 parted /dev/sda --script print
