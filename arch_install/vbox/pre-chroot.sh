@@ -13,7 +13,9 @@ mkfs.ext4 /dev/sda2
 parted /dev/sda --script print
 
 # Bootstrapping
-mount /dev/sda1 /mnt
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
 
 pacstrap /mnt base connman
 genfstab -U /mnt >> /mnt/etc/fstab
