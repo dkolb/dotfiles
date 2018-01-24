@@ -19,5 +19,5 @@ pacstrap /mnt base connman
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Chroot and post-chroot changes.
-cp $PWD/postchroot.sh /mnt/root/postchroot.sh
+wget -O /mnt/root/postchroot.sh 'https://raw.githubusercontent.com/dkolb/dotfiles_v2/master/arch_install/vbox/post-chroot.sh'
 arch-chroot /mnt /mnt/root/postchroot.sh

@@ -15,3 +15,4 @@ echo dkub-arch-vbox > /etc/hostname
 
 echo "root:changemeplease" > chpasswd
 chage -d 0 root
+
