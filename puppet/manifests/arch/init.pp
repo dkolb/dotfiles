@@ -1,7 +1,12 @@
-$packages = $::os.distid ? {
-  "Ubuntu"  => 'build-essentials',
-  default   => 'something'
-}
+$packages = [
+  'libglvnd',
+  'xorg-server',
+  'xorg-apps',
+  'lightdm',
+  'xmonad',
+]
+
+package { $enhancers: ensure => installed }
 
 # rbenv install
 class { 'rbenv':
