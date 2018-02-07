@@ -1,4 +1,20 @@
-function metalks --description 'metalks (p|np) (o|c)'
+function metalks --description 'metalks (p|np) (o|c|i)'
+  if test (count $argv) -eq 0
+    printf "%s\n" \
+      'metalks (p|np) (o|c|i)' \
+      '  p    prod acct (awsmet)' \
+      '  np   nonprod acct (awsmetnp)' \
+      '  o    open session' \
+      '  c    open console' \
+      '  i    open an iam session' \
+      'GLOBALS REQUIRED' \
+      '  METALKS_PROD_ACCT, METALKS_NONPROD_ACCT' \
+      '    Used for the -a argument in alks to determine account.' \
+      '  METALKS_IAM_ROLE' \
+      '    Used for the -r argumetn in alks to determine role for creds.'
+    return 0
+  end
+
   if test (count $argv) -ne 2
     echo 'Wrong number of args.'
     return 1
