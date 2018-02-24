@@ -2,6 +2,7 @@ function metalks --description 'metalks (p|np) (o|c|i)'
   if test (count $argv) -eq 0
     printf "%s\n" \
       'metalks (p|np) (o|c|i)' \
+      '  Various shortcuts for using ALKS to get into awsmet and awsmetnp'
       '  p    prod acct (awsmet)' \
       '  np   nonprod acct (awsmetnp)' \
       '  o    open session' \

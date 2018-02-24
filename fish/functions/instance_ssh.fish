@@ -13,6 +13,10 @@ function instance_ssh --description 'SSH to private IP of an instance.'
   set sshkey "$AWS_SSH_KEYS_ROOT_PATH/$argv[1].pem"
 
   if test ! -f "$sshkey"
+    set sshkey "$HOME/.ssh/$argv[1].pem"
+  end
+
+  if test ! -f "$sshkey"
     echo "$sshkey does not exist."
     return 1
   end
