@@ -1,4 +1,4 @@
-fishd.*
-puppet/modules
+vim/bundle/
+!vim/bundle/Vundle.git/
 *.swp
-*.swo
+fish/fishd.*
