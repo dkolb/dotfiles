@@ -1,1 +1,1 @@
-/home/dkub/.local/share/omf/themes/simple-ass-prompt/fish_prompt.fish
+/Users/david/.local/share/omf/themes/bobthefish/fish_prompt.fish

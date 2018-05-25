@@ -6,6 +6,7 @@ set -g extra_paths $extra_paths "$HOME/.tgenv/bin"
 
 if test (uname) = 'Darwin'
   set -g extra_paths $extra_paths "/usr/local/opt/go/libexec/bin"
+  set -gx JAVA_HOME (/usr/libexec/java_home)
 else
   set -g extra_paths $extra_paths "$HOME/.nodenv/bin"
   set -g extra_paths $extra_paths "$HOME/go/bin" 
