@@ -1,0 +1,51 @@
+#!/bin/bash
+
+echo "Getting sudo..."
+
+sudo echo "Thanks."
+
+if [ "$?" != 0 ]; then
+  echo "Need sudo to run commands."
+  exit
+fi
+
+connect_vpn() {
+  if [ -e /run/openconnect.pid ]; then
+    echo "VPN is already up.  Or at least the openconnect pid exists."
+    exit 1
+  fi
+
+  sudo openconnect --background \
+    --pid-file /run/openconnect.pid \
+    --syslog \
+    --juniper \
+    https://vpnuser.manheim.com
+  sudo ip route replace default dev tun0
+}
+
+disconnect_vpn() {
+  PID=$(cat /run/openconnect.pid)
+  if $(ps --pid $PID | grep -q openconnect); then
+    sudo kill -SIGINT $PID
+    echo "SIGINT sent to $PID"
+  else
+    echo "Got PID $PID from /run/openconnect.pid but it doesn't appear to be an openconnect process."
+  fi
+}
+
+vpn_status() {
+  if [ -s /run/openconnect.pid ]; then
+    echo "VPN up and as PID $(cat /run/openconnect.pid)."
+  else
+    echo "VPN down."
+  fi
+}
+
+case $1 in
+  "up" )
+    connect_vpn ;;
+  "down" )
+    disconnect_vpn ;;
+  "status" )
+    vpn_status ;;
+esac

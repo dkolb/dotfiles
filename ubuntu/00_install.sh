@@ -1,8 +1,6 @@
 #!/bin/bash
 set -xeo pipefail
 
-source common_functions.sh
-
 PLIST=""
 
 ap() {
@@ -21,6 +19,7 @@ ap python-appindicator
 ap python-notify2
 ap python-gtk2
 ap pass
+ap openconnect
 
 sudo apt-get -y install $PLIST
 
@@ -90,5 +89,13 @@ rm /tmp/install_omf.fish
 
 # Installate and setup keybase
 /usr/bin/fish keybase.fish
+
+# Setup VPN
+sudo sed -i.bak -e 's/dns\=dnsmasq/# dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
+sudo service NetworkManager restart
+
+sudo sed -i.bak -e 's/hosts:.*/hosts: files dns mdns4_minimal/' /etc/nsswitch.conf
+
+lf "$REPO_ROOT/openconnect/vpn" "$HOME/bin"
 
 echo "HEY! Restart your terminal to get a fish shell and continue."
