@@ -62,4 +62,7 @@ rm /tmp/install_omf.fish
 # We really only use Xubuntu, still need to figure out how to detect this.
 /usr/bin/fish xubuntu_stuff.fish
 
+# Installate and setup keybase
+/usr/bin/fish keybase.fish
+
 echo "HEY! Restart your terminal to get a fish shell and continue."
