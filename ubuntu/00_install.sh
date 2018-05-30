@@ -1,6 +1,8 @@
 #!/bin/bash
 set -xeo pipefail
 
+source common_functions.sh
+
 PLIST=""
 
 ap() {
@@ -14,6 +16,11 @@ ap golang
 ap curl
 ap openjdk-8-jdk-headless
 ap openjdk-11-jdk-headless
+ap python-pip
+ap python-appindicator
+ap python-notify2
+ap python-gtk2
+ap pass
 
 sudo apt-get -y install $PLIST
 
