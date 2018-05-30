@@ -8,3 +8,9 @@ echo "Working with a dotfile repo_root of: $repo_root"
 source $repo_root/ubuntu/common_functions.fish
 
 lf "$repo_root/xfce4-terminal/terminalrc" "$HOME/.config/xfce4/terminal/terminalrc"
+
+git clone --depth=1 git@github.com:ryanoasis/nerd-fonts.git "$HOME/.nerd_fonts"
+pushd "$HOME/.nerd_fonts"
+./install.sh "Blex"
+
+popd

@@ -12,6 +12,8 @@ ap neovim
 ap tmux
 ap golang
 ap curl
+ap openjdk-8-jdk-headless
+ap openjdk-11-jdk-headless
 
 sudo apt-get -y install $PLIST
 
@@ -33,10 +35,22 @@ git clone 'https://github.com/nodenv/node-build.git' "$HOME/.nodenv/plugins/node
 rm -rf "$HOME/.tgenv"
 git clone --depth=1 'https://github.com/cunymatthieu/tgenv.git' "$HOME/.tgenv"
 
+# Install tgenv
+rm -rf "$HOME/.tfenv"
+git clone --depth=1 'https://github.com/kamatama41/tfenv.git' "$HOME/.tfenv"
+
 # Install jenv
 rm -rf $HOME/.jenv
 git clone --depth=1 'https://github.com/gcuisinier/jenv.git' "$HOME/.jenv"
 cp "$HOME/.jenv/fish/jenv.fish" "$HOME/.config/fish/functions/jenv.fish"
+PATH="$HOME/.jenv/bin:$PATH"
+eval $(jenv init -)
+jenv add /usr/lib/jvm/java-1.8.0-openjdk-amd64
+jenv add /usr/lib/jvm/java-11-openjdk-amd65
+jenv global 10.0
+
+# Make a quick go path.
+mkdir -p "$HOME/go/bin"
 
 # Set Fish Shell
 sudo chsh --shell /usr/bin/fish "$USER"

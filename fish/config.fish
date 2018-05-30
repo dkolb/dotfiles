@@ -12,6 +12,8 @@ else
   set -g extra_paths $extra_paths "$HOME/go/bin" 
   set -g extra_paths $extra_paths "$HOME/.rbenv/bin"
   set -g extra_paths $extra_paths "$HOME/.tfenv/bin"
+  set -g extra_paths $extra_paths "$HOME/.jenv/bin"
+  set -g GOPATH "$HOME/go"
 end
 
 set -gx fish_user_paths $extra_paths
@@ -21,5 +23,8 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # Set up nodenv
 status --is-interactive; and source (nodenv init -|psub)
+
+# Set up jenv
+status --is-interactive; and source (jenv init -|psub)
 
 alias gplr='git pull origin --rebase'
