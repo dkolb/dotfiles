@@ -7,19 +7,37 @@ ap() {
  PLIST="$PLIST $1"
 }
 
-ap fish
-ap neovim
-ap tmux
-ap golang
+ap ca-certificates
+ap cmake
 ap curl
-ap openjdk-8-jdk-headless
-ap openjdk-11-jdk-headless
-ap python-pip
-ap python-appindicator
-ap python-notify2
-ap python-gtk2
-ap pass
+ap fish
+ap git
+ap golang
+ap groff
+ap jq
+ap libmysqlclient-dev
+ap libreadline-dev
+ap libsqlite3-dev
+ap libssl-dev
+ap libxml2-dev
+ap libxslt-dev
+ap libyaml-dev
+ap neovim
 ap openconnect
+ap openjdk-11-jdk-headless
+ap openjdk-8-jdk-headless
+ap pass
+ap pkg-config
+ap python-appindicator
+ap python-dev
+ap python-gtk2
+ap python-notify2
+ap python-pip
+ap silversearcher-ag
+ap tmux
+ap zip
+ap zlib1g-dev
+
 
 sudo apt-get -y install $PLIST
 
@@ -27,7 +45,7 @@ sudo apt-get -y install $PLIST
 rm -rf "$HOME/.rbenv"
 git clone --depth=1 'https://github.com/rbenv/rbenv.git' "$HOME/.rbenv"
 mkdir -p "$HOME/.rbenv/plugins"
-git clone --depth=1 'https://github.com/rbenv/ruby-build.git' "$HOME/.rbenv/plugins"
+git clone --depth=1 'https://github.com/rbenv/ruby-build.git' "$HOME/.rbenv/plugins/ruby-build"
 
 
 # Install nodenv
@@ -66,6 +84,7 @@ REPO_ROOT=$( cd "$(dirname $0)/.."; pwd)
 
 mkdir -p "$HOME/bin"
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/go/packages"
 
 lf "$REPO_ROOT/fish" "$HOME/.config/fish"
 lf "$REPO_ROOT/omf" "$HOME/.config/omf"

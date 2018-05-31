@@ -21,20 +21,20 @@ function metalks --description 'metalks (p|np) (o|c|i)'
     return 1
   end
 
-  set -q METALKS_PROD_ACCT METALKS_NONPROD_ACCT METALKS_IAM_ROLE_NAME
+  set -q METALKS_EVENTER_PROD_ACCT METALKS_EVENTER_NONPROD_ACCT METALKS_EVENTER_IAM_ROLE_NAME
   if test $status -ne 0
     echo -n 'Either METALKS_PROD_ACCT or METALKS_NONPROD_ACCT '
     echo 'METALKS_IAM_ROLE_NAME univerals are missing.'
     return 1
   end
 
-  set role "$METALKS_IAM_ROLE_NAME"
+  set role "$METALKS_EVENTER_IAM_ROLE_NAME"
 
   switch $argv[1]
     case p
-      set acct "$METALKS_PROD_ACCT"
+      set acct "$METALKS_EVENTER_PROD_ACCT"
     case np
-      set acct "$METALKS_NONPROD_ACCT"
+      set acct "$METALKS_EVENTER_NONPROD_ACCT"
     case '*'
       echo 'Bad arg. metalks (p|np) (c|o)'
       return 1

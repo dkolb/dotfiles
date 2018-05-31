@@ -2,6 +2,7 @@ vim/bundle/
 !vim/bundle/Vundle.git/
 *.swp
 fish/fishd.*
+private
 nvim/shada
 nvim/swap
 .DS_Store

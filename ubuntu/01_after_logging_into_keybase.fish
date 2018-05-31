@@ -11,3 +11,7 @@ popd
 rm -rf $work_dir
 
 git clone keybase://private/dkub/pass "$HOME/.password-store"
+
+git clone keybase://private/dkub/dotfiles_private "$HOME/.dotfiles/private"
+
+
