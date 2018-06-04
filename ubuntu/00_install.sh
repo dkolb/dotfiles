@@ -33,6 +33,8 @@ ap python-dev
 ap python-gtk2
 ap python-notify2
 ap python-pip
+ap python3
+ap python3-pip
 ap silversearcher-ag
 ap tmux
 ap zip

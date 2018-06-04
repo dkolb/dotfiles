@@ -1,5 +1,5 @@
 function manvault --description "manvault [l|ad|ap]"
-  if test(count $argv) -ne 1
+  if test (count $argv) -ne 1
     echo "Need one of login, awsdev, or awsprod."
   end
 

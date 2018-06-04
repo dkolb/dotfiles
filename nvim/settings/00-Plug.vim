@@ -97,4 +97,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'godlygeek/tabular'
 
 Plug 'jlanzarotta/bufexplorer'
+
+" Autoformatting
+Plug 'sbdchd/neoformat'
 call plug#end()
