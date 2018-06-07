@@ -41,6 +41,8 @@ ap zip
 ap zlib1g-dev
 
 
+sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install $PLIST
 
 # Install rbenv the fun way!
