@@ -122,3 +122,5 @@ sudo sed -i.bak -e 's/hosts:.*/hosts: files dns mdns4_minimal/' /etc/nsswitch.co
 lf "$REPO_ROOT/openconnect/vpn" "$HOME/bin"
 
 echo "HEY! Restart your terminal to get a fish shell and continue."
+
+pip3 install neovim-remote

@@ -1,0 +1,11 @@
+[diff]
+	tool = nvr
+
+[difftool "nvr"]
+  cmd = nvr -s -d $LOCAL $REMOTE
+
+[merge]
+  tool = nvr
+
+[mergetool "nvr"]
+  cmd = nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='

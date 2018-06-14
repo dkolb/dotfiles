@@ -100,4 +100,5 @@ Plug 'jlanzarotta/bufexplorer'
 
 " Autoformatting
 Plug 'sbdchd/neoformat'
+
 call plug#end()
