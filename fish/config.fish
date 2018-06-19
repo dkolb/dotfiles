@@ -13,6 +13,7 @@ else
   set -g extra_paths $extra_paths "$HOME/.tfenv/bin"
   set -g extra_paths $extra_paths "$HOME/.jenv/bin"
   set -g extra_paths $extra_paths "$HOME/go/packages/bin"
+  set -g extra_paths $extra_paths "$HOME/.local/bin"
 end
 
 set -gx fish_user_paths $extra_paths
