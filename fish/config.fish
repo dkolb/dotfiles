@@ -4,6 +4,10 @@ fish_vi_key_bindings
 set -g extra_paths "$HOME/bin" 
 set -g extra_paths $extra_paths "$HOME/.tgenv/bin" 
 
+if test -d /usr/local/texlive/2018/bin/x86_64-linux
+  set -g extra_paths $extra_paths "/usr/local/texlive/2018/bin/x86_64-linux"
+end
+
 if test (uname) = 'Darwin'
   set -g extra_paths $extra_paths "/usr/local/opt/go/libexec/bin"
   set -gx JAVA_HOME (/usr/libexec/java_home)

@@ -101,4 +101,7 @@ Plug 'jlanzarotta/bufexplorer'
 " Autoformatting
 Plug 'sbdchd/neoformat'
 
+"SPecial theme for gvim
+Plug 'joshdick/onedark.vim'
+
 call plug#end()
