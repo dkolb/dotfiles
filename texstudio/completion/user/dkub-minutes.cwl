@@ -9,11 +9,13 @@
 #include:graphicx
 #include:multirow
 #include:pdfpages
+\calledby{name%plain}
+\timekeeper{name%plain}
 \attendee{name%plain}
 \attendeeDone
 \absent{name%plain}
 \absentDone
-\guest{name%plain}
+\aGuest{name%plain}
 \guestDone
 \motionedby{Name%plain}{Seconded Name%plain}
 \approveMinYes{Month, Date%text}{Yes}{No}{Abstain}
@@ -28,3 +30,6 @@
 \logo{file}
 \logoscale{scale}
 \logopadding{length}
+\topicwithspeaker{short title}{speaker}#L2
+\subtopicwithspeaker{short title}{speaker}#L3
+\subsubtopicwithspeaker{short title}{speaker}#L4
