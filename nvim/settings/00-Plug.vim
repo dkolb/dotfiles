@@ -104,4 +104,6 @@ Plug 'sbdchd/neoformat'
 "SPecial theme for gvim
 Plug 'joshdick/onedark.vim'
 
+Plug 'craigemery/vim-autotag'
+
 call plug#end()
