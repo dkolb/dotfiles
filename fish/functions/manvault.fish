@@ -10,6 +10,10 @@ function manvault --description "manvault [l|ad|ap]"
       vault_aws_creds aws_dev administrator
     case ap
       vault_aws_creds aws_prod administrator
+    case clear
+      set -e AWS_SESSION_TOKEN
+      set -e AWS_ACCESS_KEY_ID
+      set -e AWS_SECRET_ACCESS_KEY
   end
 end
 

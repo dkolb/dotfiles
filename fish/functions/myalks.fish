@@ -74,6 +74,7 @@ function myalks --description 'myalks [ACCT] [ENV] [ACTION]'
 
   switch $argv[3]
     case o
+      echo alks sessions open -a "$$acct_var_name" -r "$$role_var_name" -o creds -f -i
       alks sessions open -a "$$acct_var_name" \
         -r "$$role_var_name" -o creds -f -i
     case c
