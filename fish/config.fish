@@ -10,7 +10,6 @@ end
 
 if test (uname) = 'Darwin'
   set -g extra_paths $extra_paths "/usr/local/opt/go/libexec/bin"
-  set -gx JAVA_HOME (/usr/libexec/java_home)
 else
   set -g extra_paths $extra_paths "$HOME/.nodenv/bin"
   set -g extra_paths $extra_paths "$HOME/.rbenv/bin"
@@ -19,6 +18,7 @@ else
   set -g extra_paths $extra_paths "$HOME/go/packages/bin"
   set -g extra_paths $extra_paths "$HOME/.local/bin"
 end
+
 
 set -gx fish_user_paths $extra_paths
 

@@ -2,6 +2,7 @@ vim/bundle/
 !vim/bundle/Vundle.git/
 *.swp
 fish/fishd.*
+fish/fish_variables
 private
 nvim/shada
 nvim/swap
