@@ -18,6 +18,9 @@ else
   autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
 " Remap of <Space> in normal.
 " If on a fold line, open it. 
 " If at the beginning of a fold, close it.

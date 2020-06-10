@@ -1,3 +1,3 @@
 syntax enable
 set background=dark
-colorscheme onedark
+colorscheme solarized

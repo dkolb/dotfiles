@@ -9,7 +9,10 @@ if test -d /usr/local/texlive/2018/bin/x86_64-linux
 end
 
 if test (uname) = 'Darwin'
+  set -g extra_paths $extra_paths "/usr/local/opt/gettext/bin"
   set -g extra_paths $extra_paths "/usr/local/opt/go/libexec/bin"
+  set -g extra_paths $extra_paths "/usr/local/sbin"
+  set -g extra_paths $extra_paths "$HOME/bin/gam"
 else
   set -g extra_paths $extra_paths "$HOME/.nodenv/bin"
   set -g extra_paths $extra_paths "$HOME/.rbenv/bin"
@@ -29,3 +32,6 @@ status --is-interactive; and source (command rbenv init -|psub)
 status --is-interactive; and source (command nodenv init -|psub)
 
 alias gplr='git pull origin --rebase'
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
