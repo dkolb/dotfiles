@@ -1,0 +1,4 @@
+[submodule "fish-cubectl-completions"]
+	path = modules/fish-kubectl-completions
+	url = git@github.com:evanlucas/fish-kubectl-completions.git
+	branch = master

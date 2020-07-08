@@ -31,7 +31,10 @@ status --is-interactive; and source (command rbenv init -|psub)
 # Set up nodenv
 status --is-interactive; and source (command nodenv init -|psub)
 
+# Quick Aliases
 alias gplr='git pull origin --rebase'
+alias dos2unix_r='find . -type f -exec grep -Iq . {} \; -print0 | xargs -0 dos2unix'
+alias kc='kubectl'
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
