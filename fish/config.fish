@@ -9,6 +9,7 @@ if test -d /usr/local/texlive/2018/bin/x86_64-linux
 end
 
 if test (uname) = 'Darwin'
+  # Mac Paths
   set -g extra_paths $extra_paths "/usr/local/opt/gettext/bin"
   set -g extra_paths $extra_paths "/usr/local/opt/go/libexec/bin"
   set -g extra_paths $extra_paths "/usr/local/sbin"
@@ -36,5 +37,8 @@ alias gplr='git pull origin --rebase'
 alias dos2unix_r='find . -type f -exec grep -Iq . {} \; -print0 | xargs -0 dos2unix'
 alias kc='kubectl'
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+#pingidsdk
+alias pingidsdk-int1='java -jar ~/bin/pingidsdktools.jar -a ***REMOVED***f'
+alias pingidsdk-prod='java -jar ~/bin/pingidsdktools.jar -a ***REMOVED*** -f ~/.pingidsdk-prod-man.properties'
 
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish

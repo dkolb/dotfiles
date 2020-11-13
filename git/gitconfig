@@ -31,3 +31,5 @@
 [user]
 	name = David Kolb, Furious DevOps Unicorn
 	email = David.Kolb@Manheim.com
+[core]
+	excludesFile = ~/.gitignore
