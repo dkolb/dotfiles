@@ -14,6 +14,7 @@ ap ruby-build
 ap nodenv
 ap golang
 ap tfenv
-ap caskroom/cask/slack
+ap intellij-idea-ce
+ap visual-studio-code
  
 brew install $PLIST

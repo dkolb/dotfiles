@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/local/bin/fish
 
 set file_dir (pushd (dirname (status -f)); pwd; popd)
 set repo_root (pushd "$file_dir/../"; pwd; popd)
