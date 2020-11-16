@@ -8,3 +8,5 @@ echo "Working with a dotfile repo_root of: $repo_root"
 source $repo_root/macOS/common_functions.fish
 
 lf "$repo_root/git/gitconfig" "$HOME/.gitconfig"
+
+git lfs install

@@ -7,6 +7,7 @@ function ap {
 
 ap fish
 ap git
+ap git-lfs
 ap neovim
 ap tmux
 ap rbenv
