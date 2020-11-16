@@ -17,5 +17,7 @@ ap golang
 ap tfenv
 ap intellij-idea-ce
 ap visual-studio-code
+ap homebrew/cask/docker
+ap watchman
  
 brew install $PLIST
