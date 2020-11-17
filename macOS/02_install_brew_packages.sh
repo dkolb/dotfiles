@@ -19,5 +19,6 @@ ap intellij-idea-ce
 ap visual-studio-code
 ap homebrew/cask/docker
 ap watchman
+ap python3
  
 brew install $PLIST
