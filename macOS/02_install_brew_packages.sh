@@ -24,5 +24,7 @@ ap gh
 ap homebrew/cask/meld
 ap homebrew/cask/keybase
 ap jenv
+ap gnupg2
+ap pinentry-mac
  
 brew install $PLIST
