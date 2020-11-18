@@ -28,11 +28,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = David Kolb, Furious DevOps Unicorn
-	email = David.Kolb@Manheim.com
 [core]
 	excludesFile = ~/.gitignore
 	editor = code --wait
 [pull]
 	ff = only
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
