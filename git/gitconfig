@@ -33,3 +33,5 @@
 	email = David.Kolb@Manheim.com
 [core]
 	excludesFile = ~/.gitignore
+[pull]
+	ff = only

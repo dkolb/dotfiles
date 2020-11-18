@@ -1,0 +1,1 @@
+alias ghe="env GH_HOST=ghe.coxautoinc.com gh"
