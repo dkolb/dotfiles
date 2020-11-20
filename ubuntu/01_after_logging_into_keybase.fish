@@ -3,9 +3,7 @@
 set $work_dir (mktemp -d)
 pushd $work_dir
 
-keybase pgp export -o secret.asc -s  
-pgp --import secret.asc
-shred secret.asc
+find /keybase/private/dkub/.keys/pgp/ -type f -exec gpg --import {} \;
 
 popd
 rm -rf $work_dir
@@ -13,5 +11,3 @@ rm -rf $work_dir
 git clone keybase://private/dkub/pass "$HOME/.password-store"
 
 git clone keybase://private/dkub/dotfiles_private "$HOME/.dotfiles/private"
-
-
