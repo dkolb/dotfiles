@@ -20,4 +20,8 @@ curl -L https://get.oh-my.fish > /tmp/install_omf.fish
 fish /tmp/install_omf.fish --noninteractive
 rm /tmp/install_omf.fish
 
+# Install virtualfish for pip venvs.
+pip3 install virtualfish
+vf install 
+
 echo "HEY! Restart your terminal to get a fish shell and continue."

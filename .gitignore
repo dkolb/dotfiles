@@ -10,3 +10,4 @@ nvim/swap
 texstudio/*
 !texstudio/completion
 
+fish/conf.d/virtualfish-loader.fish

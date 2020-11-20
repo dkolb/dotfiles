@@ -12,6 +12,7 @@ ap cmake
 ap curl
 ap fish
 ap git
+ap git-lfs
 ap golang
 ap groff
 ap jq
@@ -20,7 +21,7 @@ ap libreadline-dev
 ap libsqlite3-dev
 ap libssl-dev
 ap libxml2-dev
-ap libxslt-dev
+ap libxslt1-dev
 ap libyaml-dev
 ap neovim
 ap openconnect
@@ -28,15 +29,9 @@ ap openjdk-11-jdk-headless
 ap openjdk-8-jdk-headless
 ap pass
 ap pkg-config
-ap python-appindicator
-ap python-dev
-ap python-gtk2
-ap python-notify2
-ap python-pip
-ap python3
 ap python3-pip
+ap python3.9
 ap silversearcher-ag
-ap tmux
 ap zip
 ap zlib1g-dev
 
@@ -44,6 +39,22 @@ ap zlib1g-dev
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install $PLIST
+
+# Grab common functions, set up paths, get fish set up.
+REPO_ROOT=$( cd "$(dirname $0)/.."; pwd)
+. "$REPO_ROOT/ubuntu/common_functions.sh"
+
+mkdir -p "$HOME/bin"
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/go/packages"
+
+lf "$REPO_ROOT/fish" "$HOME/.config/fish"
+lf "$REPO_ROOT/omf" "$HOME/.config/omf"
+
+rm -rf "$HOME/.local/share/omf"
+curl -L 'https://get.oh-my.fish' > /tmp/install_omf.fish
+/usr/bin/fish /tmp/install_omf.fish --noninteractive
+rm /tmp/install_omf.fish
 
 # Install rbenv the fun way!
 rm -rf "$HOME/.rbenv"
@@ -72,10 +83,10 @@ rm -rf $HOME/.jenv
 git clone --depth=1 'https://github.com/gcuisinier/jenv.git' "$HOME/.jenv"
 cp "$HOME/.jenv/fish/jenv.fish" "$HOME/.config/fish/functions/jenv.fish"
 PATH="$HOME/.jenv/bin:$PATH"
-eval $(jenv init -)
+eval "$(jenv init -)"
 jenv add /usr/lib/jvm/java-1.8.0-openjdk-amd64
-jenv add /usr/lib/jvm/java-11-openjdk-amd65
-jenv global 10.0
+jenv add /usr/lib/jvm/java-11-openjdk-amd64
+jenv global 11
 
 # Make a quick go path.
 mkdir -p "$HOME/go/bin"
@@ -83,32 +94,9 @@ mkdir -p "$HOME/go/bin"
 # Set Fish Shell
 sudo chsh --shell /usr/bin/fish "$USER"
 
-REPO_ROOT=$( cd "$(dirname $0)/.."; pwd)
-. "$REPO_ROOT/ubuntu/common_functions.sh"
-
-mkdir -p "$HOME/bin"
-mkdir -p "$HOME/.config"
-mkdir -p "$HOME/go/packages"
-
-lf "$REPO_ROOT/fish" "$HOME/.config/fish"
-lf "$REPO_ROOT/omf" "$HOME/.config/omf"
-
-rm -rf "$HOME/.local/share/omf"
-curl -L 'https://get.oh-my.fish' > /tmp/install_omf.fish
-/usr/bin/fish /tmp/install_omf.fish --noninteractive
-rm /tmp/install_omf.fish
-
-# Solarize the terminal
-/usr/bin/fish xubuntu_stuff.fish
 
 # Setup NeoVim
 /usr/bin/fish nvim.fish
-
-# Setup Tmux
-/usr/bin/fish tmux.fish
-
-# We really only use Xubuntu, still need to figure out how to detect this.
-/usr/bin/fish xubuntu_stuff.fish
 
 # Installate and setup keybase
 /usr/bin/fish keybase.fish
@@ -121,6 +109,7 @@ sudo sed -i.bak -e 's/hosts:.*/hosts: files dns mdns4_minimal/' /etc/nsswitch.co
 
 lf "$REPO_ROOT/openconnect/vpn" "$HOME/bin"
 
-echo "HEY! Restart your terminal to get a fish shell and continue."
+pip3 install neovim-remote virtualfish
+vf install
 
-pip3 install neovim-remote
+echo "HEY! Restart your terminal to get a fish shell and continue."

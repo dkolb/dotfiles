@@ -37,3 +37,5 @@
 	gpgsign = true
 [gpg]
 	program = gpg
+[user]
+	signingkey = 3BAC97A851B61A04

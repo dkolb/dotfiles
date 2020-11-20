@@ -3,9 +3,8 @@
 set working_dir (mktemp -d)
 pushd $working_dir
 
-curl -O keybase.deb https://prerelease.keybase.io/keybase_amd64.deb
-sudo dpkg -i keybase_amd64.deb
-sudo apt-get install -f
+curl --remote-name 'https://prerelease.keybase.io/keybase_amd64.deb'
+sudo apt install ./keybase_amd64.deb
 
 popd
 
