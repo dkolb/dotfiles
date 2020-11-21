@@ -12,3 +12,5 @@ git lfs install
 
 git config --global commit.gpgsign true
 git config --global user.signingkey 3BAC97A851B61A04  
+
+echo "pinentry-program /usr/bin/pinentry" >> ~/.gnupg/gpg-agent.conf

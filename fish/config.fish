@@ -23,6 +23,8 @@ else
   set -g extra_paths $extra_paths "$HOME/.jenv/bin"
   set -g extra_paths $extra_paths "$HOME/go/packages/bin"
   set -g extra_paths $extra_paths "$HOME/.local/bin"
+  # I hate everything about GPG.
+  set -xg GPG_TTY (tty)
 end
 
 

@@ -94,20 +94,14 @@ mkdir -p "$HOME/go/bin"
 # Set Fish Shell
 sudo chsh --shell /usr/bin/fish "$USER"
 
-
 # Setup NeoVim
 /usr/bin/fish nvim.fish
 
 # Installate and setup keybase
 /usr/bin/fish keybase.fish
 
-# Setup VPN
-sudo sed -i.bak -e 's/dns\=dnsmasq/# dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf
-sudo service NetworkManager restart
-
-sudo sed -i.bak -e 's/hosts:.*/hosts: files dns mdns4_minimal/' /etc/nsswitch.conf
-
-lf "$REPO_ROOT/openconnect/vpn" "$HOME/bin"
+# Setup git.
+/usr/bin/fish git.fish
 
 pip3 install neovim-remote virtualfish
 vf install
