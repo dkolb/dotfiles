@@ -29,10 +29,10 @@ end
 set -gx fish_user_paths $extra_paths
 
 # Set up rbenv
-status --is-interactive; and source (command rbenv init -|psub)
+status --is-interactive; and type -q rbenv; and source (command rbenv init -|psub)
 
 # Set up nodenv
-status --is-interactive; and source (command nodenv init -|psub)
+status --is-interactive; and type -q nodenv; and source (command nodenv init -|psub)
 
 # Quick Aliases
 alias gplr='git pull origin --rebase'
