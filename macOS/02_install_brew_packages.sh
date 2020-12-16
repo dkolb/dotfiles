@@ -26,5 +26,6 @@ ap homebrew/cask/keybase
 ap jenv
 ap gnupg2
 ap pinentry-mac
+ap homebrew/cask/session-manager-plugin
  
 brew install $PLIST
