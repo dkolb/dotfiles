@@ -1,0 +1,7 @@
+---
+- name: Setup Basics
+  hosts: all
+  gather_facts: yes
+  become: no
+  roles:
+    - role: dotfiles_and_software

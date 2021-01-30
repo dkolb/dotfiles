@@ -19,7 +19,7 @@ connect_vpn() {
     --pid-file /run/openconnect.pid \
     --syslog \
     --juniper \
-    https://vpnuser.manheim.com
+    $(cat $HOME/.dotfiles/private/vpn-address)
   sudo ip route replace default dev tun0
 }
 
