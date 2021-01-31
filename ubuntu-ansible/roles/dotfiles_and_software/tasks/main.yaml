@@ -16,6 +16,7 @@
   package:
     name: '{{ item }}'
   with_items:
+    - ansible
     - ca-certificates
     - cmake
     - curl
@@ -32,12 +33,14 @@
     - neovim
     - pass
     - pkg-config
+    - python-is-python3
     - python3-pip
     - python3.9
-    - python-is-python3
     - silversearcher-ag
+    - sshpass
     - zip
     - zlib1g-dev
+
 
 - name: Install Git LFS Package
   become: yes
