@@ -15,7 +15,7 @@ if test (uname) = 'Darwin'
   set -g extra_paths $extra_paths "/usr/local/sbin"
   set -g extra_paths $extra_paths "$HOME/bin/gam"
   # Mac Ruby Build setup with Homebrew
-  set -xg RUBY_CONFIGURE_OPTS "--with-openssl-dir=(brew --prefix openssl@1.1)"
+  set -xg RUBY_CONFIGURE_OPTS "--with-openssl-dir="(brew --prefix openssl@1.1)""
 else
   set -g extra_paths $extra_paths "$HOME/.nodenv/bin"
   set -g extra_paths $extra_paths "$HOME/.rbenv/bin"

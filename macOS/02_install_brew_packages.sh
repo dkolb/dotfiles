@@ -27,5 +27,6 @@ ap jenv
 ap gnupg2
 ap pinentry-mac
 ap homebrew/cask/session-manager-plugin
+ap the_silver_searcher
  
 brew install $PLIST
