@@ -1,0 +1,5 @@
+#!env zsh
+# return to the root of a git repo
+function gitr() {
+  cd $(git rev-parse --show-toplevel)
+}

@@ -1,0 +1,9 @@
+---
+- name: Check password store exists
+  stat:
+    path: '{{ ansible_user_dir }}/.password-store'
+  register: password_store_stat
+- name: Clone from keybase
+  ansible.builtin.command: git clone keybase://private/dkub/pass "{{ ansible_user_dir }}/.password-store"
+  when: not password_store_stat.stat.exists
+  

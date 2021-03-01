@@ -1,0 +1,103 @@
+#!env zsh
+# myalks [ACCT] [ENV] [ACTION]
+function myalks() {
+  local function __myalks_usage() {
+    printf "%s\n" \
+      'myalks (e|am) (p|np) (o|c|i)' \
+      '  Various shortcuts for using ALKS to get into manheim accounts' \
+      '' \
+      '  ACCT    The account to access.' \
+      '    e  awsmet/awsmetnp' \
+      '    am awsmancs/awsmancsnp' \
+      '' \
+      '  ENV     The environment (prod/nonprod) to access.' \
+      '    p    prod acct (awsmet)' \
+      '    np   nonprod acct (awsmetnp)' \
+      '' \
+      '  ACTION  The action to take.'\
+      '    o    open session' \
+      '    c    open console' \
+      '' \
+      'GLOBALS REQUIRED' \
+      '' \
+      '  AWSMET_PROD_ACCT, AWSMET_NONPROD_ACCT' \
+      '    Used for the -a argument in alks to determine eventer account.' \
+      '  AWSMET_IAM_ROLE' \
+      '    Used for the -r argumetn in alks to determine role for creds.' \
+      '  AWSMANCS_PROD_ACCT, AWSMANCS_NONPROD_ACCT' \
+      '    Used for the -a argument in alks to determine acct mngmnt account' \
+      '  AWSMANCS_IAM_ROLE' \
+      '    Used for the -r argument in alks to determine role for creds.'
+  }
+
+  if (( ${#} == 0 )); then
+    __myalks_usage
+    return 1
+  fi
+
+  if (( ${#} == 3 )); then
+    echo 'ERROR: Wrong number of args.'
+    __myalks_usage
+    return 1
+  fi
+
+  if [[ ! ( 
+        -v AWSMET_PROD_ACCT && 
+        -v AWSMET_NONPROD_ACCT && 
+        -v AWSMET_IAM_ROLE &&
+        -v AWSMANCS_PROD_ACCT && 
+        -v AWSMANCS_NONPROD_ACCT && 
+        -v AWSMANCS_IAM_ROLE
+  ) ]]; then
+    echo "ERROR: One of the globals is missing."
+    _myalks_print_usage
+    return 1
+  fi
+
+  case $argv[1] in
+    e)
+      local prefix=AWSMET
+      ;;
+    am)
+      local prefix=AWSMANCS
+      ;;
+    *)
+      echo "ERROR: Bad account argument."
+      _myalks_print_useage
+      return 1
+      ;;
+  esac
+
+  local role_var_name={$prefix}_IAM_ROLE
+
+  case $argv[2] in
+    p)
+      local acct_var_name={$prefix}_PROD_ACCT
+      ;;
+    np)
+      local acct_var_name={$prefix}_NONPROD_ACCT
+      ;;
+    *)
+      echo 'ERROR: Bad environment arg. metalks (p|np) (c|o)'
+      _myalks_print_usage
+      return 1
+      ;;
+  esac
+
+  case $argv[3] in
+    o)
+      echo alks sessions open -a "${(P)acct_var_name}" -r "${(P)role_var_name}" -o creds -f -i
+      alks sessions open -a "${(P)acct_var_name}" \
+        -r "${(P)role_var_name}" -o creds -f -i
+      ;;
+    c)
+      alks sessions console -a "${(P)acct_var_name}" \
+        -r "${(P)role_var_name}"
+      ;;
+    *)
+      echo 'ERROR: Bad action arg.'
+      _myalks_print_usage
+      return 1
+      ;;
+  esac
+}

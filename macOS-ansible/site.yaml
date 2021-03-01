@@ -1,0 +1,13 @@
+---
+- name: Setup Basics
+  hosts: all
+  gather_facts: yes
+  become: no
+  roles:
+    - role: prereqs
+    - role: zsh_zgen
+    - role: nvim
+    - role: git_config
+    - role: gpg-keys-from-keybase
+    - role: password-store
+    - role: private-dotfiles

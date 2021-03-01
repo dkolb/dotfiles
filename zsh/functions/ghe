@@ -1,0 +1,5 @@
+#!env zsh
+# Wraps gh
+function ghe() {
+  env GH_HOST=ghe.coxautoinc.com gh $argv;
+}

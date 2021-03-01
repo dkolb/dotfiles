@@ -1,0 +1,25 @@
+#!env zsh
+# manvault [l|ad|ap]
+function manvault {
+  if (( ${#} != 1 )); then
+    echo "Need one of login (l), awsdev (ad), or awsprod (ap)."
+  fi
+
+  case $argv[1] in
+    l*)
+      vault login -method=ldap username=$MANHEIM_LDAP_USERNAME
+      ;;
+    ad|awsdev)
+      vault_aws_creds aws_dev administrator
+      ;;
+    ap|awsprod)
+      vault_aws_creds aws_prod administrator
+      ;;
+    clear)
+      unset AWS_SESSION_TOKEN
+      unset AWS_ACCESS_KEY_ID
+      unset AWS_SECRET_ACCESS_KEY
+      ;;
+  esac
+}
+

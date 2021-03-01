@@ -1,0 +1,24 @@
+#!env zsh
+# Shortcuts for nvr
+function nv {
+  case $argv[1] in
+    'l')
+      nvr -l $argv[2..-1]
+      ;;
+    's')
+      nvr -o $argv[2..-1]
+      ;;
+    'v')
+      nvr -O $argv[2..-1]
+      ;;
+    't')
+      nvr -cc tabedit $argv[2..-1]
+      ;;
+    'n')
+      nvr -s -cc terminal
+      ;;
+    '*')
+      echo 'Invalid. One of [l]ast, [s]plit, [v]split, [t]ab'\
+      'or [n]ew process required.'
+  esac
+}

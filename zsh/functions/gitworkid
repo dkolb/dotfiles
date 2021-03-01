@@ -1,0 +1,6 @@
+#!env zsh
+#Set github author info to my work persona.
+function gitworkid() {
+  git config user.email 'david.kolb@coxautoinc.com'
+  git config user.name 'David Kolb'
+end

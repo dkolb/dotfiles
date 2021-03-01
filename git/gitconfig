@@ -38,4 +38,4 @@
 [gpg]
 	program = gpg
 [user]
-	signingkey = 3BAC97A851B61A04
+	signingkey = cfcbdc8d8ad3a3fd6897428e3bac97a851b61a04

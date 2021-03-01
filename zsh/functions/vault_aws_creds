@@ -1,0 +1,19 @@
+#!env zsh
+# Exports vault temp AWS keys into env.
+function vault_aws_creds {
+  # argv[1] = Account, either aws_dev or aws_prod
+  # argv[2] = Role name: administrator, devopser, readonly
+  local json=$(vault read -format=json "$argv[1]/sts/$argv[2]")
+  local json="$json"
+
+  echo "Exporting the following into your environment: "
+  local command=$(echo $json | jq '.data | "export AWS_ACCESS_KEY_ID=\(.access_key)"' | sed 's/"//g')
+  echo $command
+  eval $command
+  command=$(echo $json | jq '.data | "export AWS_SECRET_ACCESS_KEY=\(.secret_key)"' | sed 's/"//g')
+  echo $command
+  eval $command
+  command=$(echo $json | jq '.data | "export AWS_SESSION_TOKEN=\(.security_token)"' | sed 's/"//g')
+  echo $command
+  eval $command
+}

@@ -1,0 +1,11 @@
+---
+- name: Get keybase fingerprint
+  ansible.builtin.shell: |
+    keybase pgp list |
+    awk -F: '/PGP Fingerprint:/{print $2}' |
+    sed 's/ //g'
+  register: key_fingerprint
+- name: Enable signing
+  ansible.builtin.command: git config --global commit.gpgsign true
+- name: Set signing key
+  ansible.builtin.command: git config --global user.signingkey "{{ key_fingerprint.stdout }}"

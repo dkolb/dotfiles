@@ -11,3 +11,5 @@ texstudio/*
 !texstudio/completion
 
 fish/conf.d/virtualfish-loader.fish
+zsh/.zcompdump*
+zsh/.zsh_history

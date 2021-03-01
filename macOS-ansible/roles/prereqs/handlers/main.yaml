@@ -1,0 +1,7 @@
+---
+- name: Login to Keybase
+  command: /usr/local/bin/keybase login
+- name: Install Vim Plugins
+  command: nvim +'PlugInstall --sync' +qa
+- name: Install Git LFS
+  command: git lfs install

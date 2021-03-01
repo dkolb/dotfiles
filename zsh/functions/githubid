@@ -1,0 +1,6 @@
+#!env zsh
+#Set repo author to my github persona.
+function githubid() {
+  git config user.email 'david.c.kolb@gmail.com'
+  git config user.name 'David Kolb'
+}

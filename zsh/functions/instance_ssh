@@ -1,0 +1,31 @@
+#!env zsh
+# SSH to private IP of an instance.
+function instance_ssh {
+  #argv[1] Which ssh key to use.
+  #argv[2] Which instance id.
+  #argv[3] Alterantive username to ssh with.
+  #Requires an exported AWS_SSH_KEYS_ROOT_PATH variable.
+
+  if [[ ! -v AWS_SSH_KEYS_ROOT_PATH ]]; then
+    echo "Please set AWS_SSH_KEYS_ROOT_PATH."
+    return 1
+  fi
+
+  local sshkey="${AWS_SSH_KEYS_ROOT_PATH}/${argv[1]}.pem"
+  if [[ ! -f "$sshkey" ]]; then
+    sshkey="$HOME/.ssh/$argv[1].pem"
+  fi
+
+  if [[ ! -f "$sshkey" ]]; then
+    echo "$sshkey does not exist."
+    return 1
+  fi
+
+  local instance_ip=$(aws_instance_ip $argv[2])
+
+  if [[ ${#} -gt 2 && -n "$argv[3]" ]]; then
+    ssh -i "$sshkey" "$argv[3]@$instance_ip"
+  else
+    ssh -i "$sshkey" "ec2-user@$instance_ip"
+  fi
+}

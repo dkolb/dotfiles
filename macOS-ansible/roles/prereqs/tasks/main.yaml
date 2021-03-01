@@ -1,0 +1,35 @@
+---
+- name: Install brew packages
+  community.general.homebrew:
+    name:
+    - gh
+    - git
+    - git-lfs
+    - gnupg2
+    - golang
+    - jenv
+    - neovim
+    - nodenv
+    - pinentry-mac
+    - python3
+    - rbenv
+    - ruby-build
+    - tfenv
+    - the_silver_searcher
+    - tmux
+    - watchman
+    - zsh
+
+- name: Install brew casks
+  community.general.homebrew_cask:
+    name:
+    - docker
+    - meld
+    - session-manager-plugin
+    - intellij-idea-ce
+    - visual-studio-code
+
+- name: Install brew casks
+  community.general.homebrew_cask:
+    name: keybase
+  notify: Login to Keybase
