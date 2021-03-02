@@ -103,4 +103,7 @@ Plug 'sbdchd/neoformat'
 
 Plug 'craigemery/vim-autotag'
 
+" File type icons in NERDTree (requires nerd font installed)
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()

@@ -8,4 +8,5 @@
     name:
       - font-fira-code-nerd-font
       - font-mononoki-nerd-font
+      - font-meslo-lg-nerd-font
     state: present

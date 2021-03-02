@@ -20,6 +20,7 @@
     - tfenv
     - the_silver_searcher
     - tmux
+    - tmux-mem-cpu-load
     - watchman
     - yh
     - zsh
