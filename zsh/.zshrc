@@ -17,7 +17,9 @@ setopt promptsubst
 
 PS1="READY >" #simple prompt until remaining prompt things load.
 
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# Plugin options
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+export ZVM_CURSOR_STYLE_ENABLED=false
 
 # Plugins for before the prompt is shown.
 zinit depth"1" for jeffreytse/zsh-vi-mode
