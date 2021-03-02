@@ -3,11 +3,16 @@
   hosts: all
   gather_facts: yes
   become: no
+  vars:
+    user: david.kolb
   roles:
     - role: prereqs
-    - role: zsh_zgen
+    - role: zsh
+    - role: zgen
     - role: nvim
     - role: git_config
     - role: gpg-keys-from-keybase
     - role: password-store
     - role: private-dotfiles
+    - role: iterm2
+    - role: nerdfonts

@@ -1,4 +1,10 @@
 ---
+- name: Link gitconfig
+  file:
+    path: '{{ ansible_user_dir }}/.gitconfig'
+    src: '{{ ansible_user_dir }}/.dotfiles/git/gitconfig'
+    state: link
+    force: yes
 - name: Get keybase fingerprint
   ansible.builtin.shell: |
     keybase pgp list |

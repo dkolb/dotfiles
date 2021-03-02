@@ -31,6 +31,7 @@
 [core]
 	excludesFile = ~/.gitignore
 	editor = code --wait
+  pager = delta
 [pull]
 	ff = only
 [commit]
@@ -39,3 +40,5 @@
 	program = gpg
 [user]
 	signingkey = cfcbdc8d8ad3a3fd6897428e3bac97a851b61a04
+[delta]
+  syntax-theme = Solarized (Dark)

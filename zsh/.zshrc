@@ -1,32 +1,47 @@
 # zshell specifics
 fpath=("$ZDOTDIR/functions" $fpath)
-path=('/usr/local/bin' $path)
+
+path=(
+  '/usr/local/sbin'
+  '/usr/local/bin'
+  $path
+)
 
 autoload $ZDOTDIR/functions/*
 
-source "${HOME}/.dotfiles/private/manheim_env"
+source "${HOME}/.dotfiles/private/zsh/manheim_env"
 
-# zgen setup
-export ZGEN_RESET_ON_CHANGE=(${HOME}/.config/zsh/.zshrc)
-source "${HOME}/.zgen/zgen.zsh"
-if ! zgen saved; then
-  echo "Creating a zgen save"
+source ~/.zinit/bin/zinit.zsh
+# Oh My Zsh Prompt Setup
+setopt promptsubst
 
-  zgen oh-my-zsh
+PS1="READY >" #simple prompt until remaining prompt things load.
 
-  #plugins
-  # zgen oh-my-zsh plugins/git
-  # zgen oh-my-zsh plugins/sudo
-  # zgen oh-my-zsh plugins/command-not-found
-  # zgen load zsh-users/zsh-syntax-highlighting
-  # zgen load zsh-users/zsh-completions
-  # zgen load zsh-users/zsh-autosuggestions
-  # zgen load zsh-users/zsh-history-substring-search
-  # zgen load unixorn/tumult.plugin.zsh
-  # zgen load chrissicool/zsh-256color
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-  #theme
-  zgen oh-my-zsh themes/arrow
+# Plugins for before the prompt is shown.
+zinit depth"1" for jeffreytse/zsh-vi-mode
 
-  zgen save
-fi
+# Prompt plugin, turbo mode and redraws the prompt.
+zinit wait'!' lucid nocd depth"1" \
+  atload"[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh; _p9k_precmd" \
+  for romkatv/powerlevel10k
+
+# Normal plugins in turbo mode.
+zinit wait lucid for \
+  wfxr/forgit \
+  OMZP::fzf \
+  OMZP::sudo \
+  OMZP::kubectl \
+  OMZP::virtualenvwrapper \
+  OMZP::terraform \
+  chrissicool/zsh-256color
+
+
+# These plugins should always be last since they do compinits and stuff.
+zinit wait lucid for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma/fast-syntax-highlighting \
+  blockf zsh-users/zsh-completions \
+  atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions

@@ -1,0 +1,11 @@
+---
+- name: Tap cask fonts
+  community.general.homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+- name: Install fonts
+  community.general.homebrew_cask:
+    name:
+      - font-fira-code-nerd-font
+      - font-mononoki-nerd-font
+    state: present
