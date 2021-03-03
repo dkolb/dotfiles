@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "$1" | sed \
--e 's/*//' \
--e 's/-/ﭢ/' \
--e 's/#/﮻/' \
--e 's/!//' \
--e 's/~/ﮊ/' \
--e 's/M//' \
--e 's/Z//'
+-e 's/*/类/' \
+-e 's/-/玲/' \
+-e 's/#/ /' \
+-e 's/!/ /' \
+-e 's/~/☠️/' \
+-e 's/M/ /' \
+-e 's/Z/ /'
 
 #* 	Denotes the current window.
 #- 	Marks the last window (previously selected).

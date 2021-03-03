@@ -1,19 +1,19 @@
 ---
 - name: Detect first time
-  stat:
+  ansible.builtin.stat:
     path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
   register: first_run_stat
 
 - name: Update base packages
   become: yes
-  apt:
+  ansible.builtin.apt:
     upgrade: yes
     update_cache: yes
     cache_valid_time: 86400 #One day`
 
 - name: Install prerequistes
   become: yes
-  package:
+  ansible.builtin.package:
     name:
       - ansible
       - ca-certificates
@@ -41,7 +41,7 @@
       - zlib1g-dev
 
 - name: Esnsure {{ item }} exists
-  file:
+  ansible.builtin.file:
     path: '{{ item }}'
     state: directory
   with_items:
