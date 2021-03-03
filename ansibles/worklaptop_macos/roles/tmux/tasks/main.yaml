@@ -5,7 +5,6 @@
   register: first_run_stat
 
 - name: Install prerequistes
-  become: yes
   community.general.homebrew:
     name:
       - tmux

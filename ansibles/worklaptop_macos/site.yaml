@@ -16,3 +16,4 @@
     - role: private-dotfiles
     - role: iterm2
     - role: nerdfonts
+    - role: tmux

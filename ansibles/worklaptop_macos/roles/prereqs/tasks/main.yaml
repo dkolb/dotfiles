@@ -3,6 +3,7 @@
   community.general.homebrew:
     name:
     - bat
+    - cmake
     - fzf
     - gh
     - git
