@@ -9,9 +9,7 @@ path=(
 
 autoload $ZDOTDIR/functions/*
 
-if [[ -f "${HOME}/.dotfiles/private/zsh/manheim_env "]]; then
-  source "${HOME}/.dotfiles/private/zsh/manheim_env"
-fi
+source "${HOME}/.dotfiles/private/zsh/env"
 
 source ~/.zinit/bin/zinit.zsh
 # Oh My Zsh Prompt Setup

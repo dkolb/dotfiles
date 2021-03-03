@@ -3,6 +3,7 @@
   ansible.builtin.stat:
     path: '{{ ansible_user_dir }}/.dotfiles/private'
   register: private_stat
+
 - name: Clone from keybase
-  ansible.builtin.command: git clone keybase://private/dkub/dotfiles_private "{{ ansible_user_dir }}/.dotfiles/private"
+  ansible.builtin.command: git clone keybase://private/dkub/dotfiles_private_manheim "{{ ansible_user_dir }}/.dotfiles/private"
   when: not private_stat.stat.exists

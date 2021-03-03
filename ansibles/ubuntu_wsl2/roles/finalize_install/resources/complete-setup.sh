@@ -13,4 +13,4 @@ find /keybase/private/dkub/.keys/pgp/ -type f -exec gpg --import {} \;
 
 git clone keybase://private/dkub/pass "$HOME/.password-store"
 
-git clone keybase://private/dkub/dotfiles_private "$HOME/.dotfiles/private"
+git clone keybase://private/dkub/dotfiles_private_personal "$HOME/.dotfiles/private"

@@ -35,7 +35,7 @@
 - name: Clone zinit repository
   ansible.builtin.git:
     repo: https://github.com/zdharma/zinit.git
-    dest: '{{ ansible_user_dir }}/.zinit'
+    dest: '{{ ansible_user_dir }}/.zinit/bin'
 # - name: Clone zgenom repo
 #   ansible.builtin.git:
 #     repo: https://github.com/tarjoilija/zgen.git
