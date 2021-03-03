@@ -1,17 +1,17 @@
 ---
 - name: Set zshenv to zgen zshenv
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/.zshenv"
     src: "{{ ansible_user_dir }}/.dotfiles/zsh/zgen_zshenv"
     state: link
     force: yes
 - name: Link .config/zsh directory
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/.config/zsh"
     src: "{{ ansible_user_dir }}/.dotfiles/zsh"
     state: link
     force: yes
 - name: Clone zgen repo
-  git:
+  ansible.builtin.git:
     repo: https://github.com/tarjoilija/zgen.git
     dest: "{{ ansible_user_dir }}/.zgen"

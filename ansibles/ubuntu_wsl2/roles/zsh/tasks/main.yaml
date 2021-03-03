@@ -1,0 +1,43 @@
+---
+- name: Detect first time
+  ansible.builtin.stat:
+    path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Install ZSH and friends
+  become: yes
+  ansible.builtin.package:
+    name:
+     - zsh
+     - fzf
+
+- name: Install virtualenvwrapper
+  ansible.builtin.pip:
+    name: virtualenvwrapper
+
+- name: Esnsure .config exists
+  ansible.builtin.file:
+    path: '{{ ansible_user_dir }}/.config'
+    state: directory
+
+- name: Set fish as default shell for {{ user }}
+  become: yes
+  ansible.builtin.user:
+    name: "{{ user }}"
+    shell: /usr/bin/zsh
+
+- name: Link {{ item.path | basename }}.
+  ansible.builtin.file:
+    path: '{{ item.path }}'
+    src: '{{ item.src }}'
+    state: link
+  with_items:
+    - path: '{{ ansible_user_dir }}/.zshenv'
+      src: '{{ ansible_user_dir }}/.dotfiles/zsh/zinit_zshenv'
+    - path: '{{ ansible_user_dir }}/.config/zsh'
+      src: '{{ ansible_user_dir }}/.dotfiles/zsh'
+
+- name: Clone zinit repository
+  ansible.builtin.git:
+    repo: https://github.com/zdharma/zinit.git
+    dest: '{{ ansible_user_dir }}/.zinit/bin'

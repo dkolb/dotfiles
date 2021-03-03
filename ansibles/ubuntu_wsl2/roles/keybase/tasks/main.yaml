@@ -1,0 +1,11 @@
+---
+- name: Detect first time
+  stat:
+    path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: "Install Keybase Package"
+  apt:
+    deb: https://prerelease.keybase.io/keybase_amd64.deb
+  notify:
+    - Run Keybase

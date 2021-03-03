@@ -1,0 +1,34 @@
+---
+- name: Detect first time
+  stat:
+    path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Install neovim packages
+  become: yes
+  package:
+    name: neovim
+
+- name: Ensure .config exists
+  file:
+    path: '{{ ansible_user_dir }}/.config'
+    state: directory
+
+- name: Create soft links to place configurations
+  file:
+    path: '{{ ansible_user_dir }}/.config/nvim'
+    src: '{{ ansible_user_dir }}/.dotfiles/nvim'
+    state: link
+    force: yes
+
+- name: Create NVIM Autoload Directories
+  file:
+    path: '{{ ansible_user_dir }}/.local/share/nvim/site/autoload'
+    state: directory
+
+- name: Grab newest Plug.vim
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: '{{ ansible_user_dir }}/.local/share/nvim/site/autoload/plug.vim'
+  notify:
+    - Install Vim Plugins

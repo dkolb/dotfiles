@@ -1,0 +1,24 @@
+---
+- name: Detect first time
+  stat:
+    path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+# Copy post setup script.
+- name: Copy post setup script
+  copy:
+    src: '{{ role_path }}/resources/complete-setup.sh'
+    dest: '{{ ansible_user_dir }}/complete-setup.sh'
+    mode: 'u=rwx,g=rx,o=rx'
+  when: not first_run_stat.stat.exists 
+
+- name: Mark role as first run completed.
+  file:
+    path: '{{ item.path }}'
+    state: '{{ item.state }}'
+  when: not first_run_stat.stat.exists  
+  with_items:
+    - path: '{{ansible_user_dir}}/.config/dkub-dotfiles/'
+      state: directory
+    - path: '{{ansible_user_dir}}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+      state: touch

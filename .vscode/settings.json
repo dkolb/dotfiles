@@ -1,6 +1,5 @@
 {
   "files.associations": {
-    "**/ubuntu-ansible/**/*.yaml": "ansible-advanced",
-    "**/macos-ansible/**/*.yaml": "ansible-advanced"
+    "**/ansibles/**/*.yaml": "ansible-advanced",
   }
 }
