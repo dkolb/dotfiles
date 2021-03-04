@@ -1,8 +1,0 @@
-#!env zsh
-function nvide {
-  if [[ -v TMUX ]]; then
-    tmux new-window -n "nvide:$(basename $PWD)" nvim +NERDTree $@
-  else
-    nvim +NERDTree $@
-  fi
-}

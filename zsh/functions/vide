@@ -1,0 +1,8 @@
+#!env zsh
+function vide {
+  if [[ -v TMUX ]]; then
+    tmux new-window -n "vide:$(basename $PWD)" nvim +NERDTree $@
+  else
+    nvim +NERDTree $@
+  fi
+}
