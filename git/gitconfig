@@ -30,7 +30,7 @@
 	required = true
 [core]
 	excludesFile = ~/.gitignore
-	editor = code --wait
+	editor = nvim
   pager = delta
 [pull]
 	ff = only

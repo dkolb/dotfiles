@@ -35,7 +35,7 @@ function myalks() {
     return 1
   fi
 
-  if (( ${#} == 3 )); then
+  if (( ${#} != 3 )); then
     echo 'ERROR: Wrong number of args.'
     __myalks_usage
     return 1
@@ -68,14 +68,14 @@ function myalks() {
       ;;
   esac
 
-  local role_var_name={$prefix}_IAM_ROLE
+  local role_var_name=${prefix}_IAM_ROLE
 
   case $argv[2] in
     p)
-      local acct_var_name={$prefix}_PROD_ACCT
+      local acct_var_name=${prefix}_PROD_ACCT
       ;;
     np)
-      local acct_var_name={$prefix}_NONPROD_ACCT
+      local acct_var_name=${prefix}_NONPROD_ACCT
       ;;
     *)
       echo 'ERROR: Bad environment arg. metalks (p|np) (c|o)'

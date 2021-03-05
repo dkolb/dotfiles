@@ -3,4 +3,4 @@
 function gitworkid() {
   git config user.email 'david.kolb@coxautoinc.com'
   git config user.name 'David Kolb'
-end
+}

@@ -1,8 +1,12 @@
 #!env zsh
 function vide {
   if [[ -v TMUX ]]; then
-    tmux new-window -n "vide:$(basename $PWD)" nvim +NERDTree $@
+    tmux \
+      new-window -n "vide:$(basename $PWD)" nvim +NERDTree $@ \; \
+      split-window -v -p 30\;
   else
-    nvim +NERDTree $@
+    tmux \
+      new-session -n "vide:$(basename $PWD)" nvim +NERDTree $@ \; \
+      split-window -v -p 30\;
   fi
 }
