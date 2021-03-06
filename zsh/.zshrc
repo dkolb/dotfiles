@@ -9,9 +9,17 @@ path=(
 
 autoload $ZDOTDIR/functions/*
 
-source "${HOME}/.dotfiles/private/zsh/env"
+# Make pinentry work because it's dumb AF for some reason.
+export GPG_TTY=$(tty)
 
+# Source private environment (and machine specific stuff if needed)
+if [[ -f "${HOME}/.dotfiles/private/zsh/env" ]]; then
+  source "${HOME}/.dotfiles/private/zsh/env"
+fi
+
+# ZSH Plugins
 source ~/.zinit/bin/zinit.zsh
+
 # Oh My Zsh Prompt Setup
 setopt promptsubst
 
@@ -19,10 +27,6 @@ PS1="READY >" #simple prompt until remaining prompt things load.
 
 # Plugin options
 export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
-# Vi Mode
-#export ZVM_CURSOR_STYLE_ENABLED=false
-#zinit depth"1" for jeffreytse/zsh-vi-mode
 
 # VIM Mode
 export MODE_CURSOR_VIINS="bar"

@@ -16,6 +16,7 @@
   ansible.builtin.package:
     name:
       - ansible
+      - bat
       - ca-certificates
       - cmake
       - curl

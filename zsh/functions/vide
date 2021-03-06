@@ -1,12 +1,46 @@
 #!env zsh
 function vide {
-  if [[ -v TMUX ]]; then
-    tmux \
-      new-window -n "vide:$(basename $PWD)" nvim +NERDTree $@ \; \
-      split-window -v -p 30\;
-  else
-    tmux \
-      new-session -n "vide:$(basename $PWD)" nvim +NERDTree $@ \; \
-      split-window -v -p 30\;
+  local working_dir="$PWD"
+  local open_file="false"
+  if (( ${#} > 0 )); then
+    if [[ -d $1 ]]; then
+      working_dir="$1"
+    else
+      working_dir="$(dirname "$1")"
+      open_file="true"
+    fi
   fi
+
+  local tmux_cmd=("tmux")
+
+  if [[ -v TMUX ]]; then
+    tmux_cmd+=("new-window")
+  else
+    tmux_cmd+=("new-session")
+  fi
+
+  tmux_cmd+=("-n" "vide:$(basename $working_dir)" "-c" "$working_dir"
+    "nvim" "+NERDTree")
+
+  if [[ "$open_file" == "true" ]]; then
+    tmux_cmd+=("$@")
+  fi
+
+  tmux_cmd+=(";" "split-window" "-v" "-p" "30" ";")
+
+  echo $tmux_cmd
+
+  $tmux_cmd
+
+  # if [[ -v TMUX ]]; then
+  #   tmux \
+  #     new-window -n "vide:$(basename $PWD)" -c "$working_dir" \
+  #       nvim +NERDTree $@ \; \
+  #     split-window -v -p 30\;
+  # else
+  #   tmux \
+  #     new-session -n "vide:$(basename $PWD)" -c "$working_dir" \
+  #       nvim +NERDTree $@ \; \
+  #     split-window -v -p 30\;
+  # fi
 }
