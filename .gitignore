@@ -12,4 +12,4 @@ texstudio/*
 
 fish/conf.d/virtualfish-loader.fish
 zsh/.zcompdump*
-zsh/.zsh_history
+zsh/.zsh_historyzsh/.zsh_sessions
