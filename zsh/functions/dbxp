@@ -1,0 +1,4 @@
+#!env zsh
+function dbxp() {
+  docker build --push $@
+}

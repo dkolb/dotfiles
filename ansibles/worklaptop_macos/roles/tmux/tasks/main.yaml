@@ -20,3 +20,25 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: '{{ ansible_user_dir}}/.tmux/plugins/tpm'
   notify: Install tpm Plugins
+
+- name: Detect xterm-256color-italic terminal type
+  ansible.builtin.shell:
+    cmd: find {{ ansible_user_dir }}/.terminfo -type f -name 'xterm-256color-italic' | grep .
+  register: italic_term_installed
+  ignore_errors: yes #Non-zero is kinda actually what we are looking for.
+
+- name: Install xterm-256color-italic terminal type
+  ansible.builtin.shell:
+    cmd: tic -x {{ role_path }}/resources/xterm-256color-italic.terminfo
+  when: italic_term_installed.rc != 0
+
+- name: Detect tmux-256color-italic terminal type
+  ansible.builtin.shell:
+    cmd: find {{ ansible_user_dir}}/.terminfo -type f -name 'tmux-256color-italic' | grep .
+  register: tmux_term_installed
+  ignore_errors: yes #Non-zero is kinda actually what we are looking for.
+
+- name: Install tmux-256color terminal type
+  ansible.builtin.shell:
+    cmd: tic -x {{ role_path }}/resources/tmux-256color-italic.terminfo
+  when: tmux_term_installed.rc != 0

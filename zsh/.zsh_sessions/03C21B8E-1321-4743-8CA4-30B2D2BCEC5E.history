@@ -1,0 +1,1013 @@
+ls
+ls
+chmod +x plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+terraform init
+rm -rf .terraform
+terraform mirror
+ls
+ls -l
+lsd
+ls --colors
+ps -ef | grep watch
+ls
+ls
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+\:q
+exit
+ls -l
+ls
+gh issue
+gh issue create
+gh project
+cd private/
+ls
+cd zsh
+ls
+nvim env
+git add .
+githubid
+git commit -m 'Export AWS_REGION into environment.'
+git push origin
+cd
+exit
+exit
+cd
+ls
+myalks am np o
+nvim ~/.dotfiles/zsh/functions/myalks
+cd .dotfiles
+git status
+git diff
+git add .
+git commit -m 'Various fixes and enhancements, all minor.'
+git push origin
+clear
+aws ssm start-session i-024b723a172087f46
+aws ssm start-session --target i-024b723a172087f46
+export AWS_REGION=us-east-1
+aws ssm start-session --target i-024b723a172087f46
+ls
+ls -ltra
+bat fish/functions/manvault.fish
+bat fish/functions/vault_aws_creds.fish
+ls
+nvim test.json
+bat test.json
+mv test.json ../
+cd
+response=$(cat test.json)
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport"\
+'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport"
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\nexport"'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\\nexport"'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)export"'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)\
+export SOMETHING_ELSE"'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)"'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)"' | sed 's/"//g'
+echo $response | jq '.Credentials | "export AWS_ACCESS_KEY_ID=\(.AccessKeyId)"' | sed 's/"//g'
+aws ssm start-session --target i-024b723a172087f46
+aws ssm start-session --target i-024b723a172087f46
+aws ssm start-session --target i-024b723a172087f46
+ls
+cd cais/Manheim-APITools/manheim-pingfederate-server-profile/local_work
+ls
+git status
+cd local_adjustments_profile
+cd ..
+ls
+docker-compose -f docker-compose-no-db.yaml rm
+./run_local.sh -e dev
+cd ..
+cd profiles
+cd profiles
+open .
+git status
+git add ../local_work/docker-compose-no-db.yaml
+git diff
+git checkout profiles/dev/instance/server/default/data/ping-ssl-client-trust-cas.jks
+git checkout dev/instance/server/default/data/ping-ssl-client-trust-cas.jks
+ls
+git status
+git checkout dev/instance/server/default/data/adapter-config/PingIDRegistrationNormal.xml
+git diff
+code dev/instance/server/default/data/adapter-config/ManheimCustomerFormAdapter.xml
+git diff e2e/
+vide
+git status
+git status
+git checkout  integration1/instance/server/default/data/ping-ssl-client-trust-cas.jks\
+
+git status
+git checkout integration1/instance/server/default/data/ping-ssl-client-trust-cas.jks\
+
+git status
+git diff integration1/
+git add integration1
+git status
+git status
+git add e2e
+git status
+git add dev
+git status
+git status
+git checkout  integration5/instance/server/default/data/ping-ssl-client-trust-cas.jks
+ls
+git status
+git diff
+git add .
+git status
+git checkout uat/instance/server/default/data/ping-ssl-client-trust-cas.jks\
+
+git status
+git add .
+git commit -m "[DE144193] Map directory's uid not the typed uid."
+rm profiles/e2e/instance/server/default/data/ping-ssl-client-trust-cas.jks
+rm e2e/instance/server/default/data/ping-ssl-client-trust-cas.jks
+git add .
+git commit --amend --no-edit
+git push origin
+git log
+git checkout dev-v10
+git log
+git pull origin --rebase
+git log
+git cherry-pick 14c575cfe585f5a293063e7f09d8d7ef70be7cc3
+git push origin
+git checkout dev-v10-username-recovery 
+git log
+git rebase HEAD~1
+git rebase --interactive HEAD~1
+git push origin --force
+ls
+clear
+ls
+ls
+cd ..
+ls
+git status
+git --version
+brew upgrade git
+ls
+ls
+ls
+ls
+git branch -r
+git checkout -b prod-deploy-2020-03-11
+open profiles/prod
+git status
+git checkout modified:   profiles/prod/instance/server/default/data/pingfederate-jdbc-ds.xml\
+
+git checkout profiles/prod/instance/server/default/data/pingfederate-jdbc-ds.xml
+git diff
+git checkout profiles/prod/instance/server/default/data/adapter-config/CoxPingIDRegistrationAdapter.xml
+git status
+git diff
+git status
+git add profiles/prod/instance/server/default/data/adapter-config
+git diff
+cd profiles/prod/instance/server/default
+ls
+cd data
+ls
+git status
+nvim oauth-authz-server-settings.xml
+exit
+cd /Users/david.kolb/cais/Manheim-APITools/manheim-pingfederate-server-profile/profiles/prod/instance/server/default/data/
+ls
+git dfif oauth-authz-server-settings.xml
+git diff oauth-authz-server-settings.xml
+git dfif oauth-authz-server-settings.xml
+git diff oauth-authz-server-settings.xml
+git diff oauth-authz-server-settings.xml
+git add oauth-authz-server-settings.xml
+git diff
+ga
+ga
+which ga
+which forgit::add
+ga
+git status
+git checkout ping-ssl-client-trust-cas.jks sourceid-saml2-local-metadata.xml
+rm pingfederate-jdbc-ds.xml.bak sourceid-saml2-local-metadata.xml.bak
+git status
+git diff HEAD
+git commit -m "[DE144193] Don't trust your users.'
+git commit -m "[DE144193] Use PD uid not typed username in tokens"
+git push origin
+git push --set-upstream origin prod-deploy-2020-03-11 
+git fetch --prune
+git branch -r
+git checkout prod-deploy-2021-03-11 
+git status
+git cherry-pick 84513c2
+git push origin
+git branch -D prod-deploy-2020-03-11 
+git branch -D prod-deploy-2020_02_18 
+git branch -r
+git push origin :prod-deploy-2020-03-11 
+git fetch --prune
+git branch -r
+\:q
+cd ..
+gitr
+cd ../manheim-pingfederate-docker
+ls
+cd scripts
+ls
+nvim replace_instances.py
+ls
+cd
+myalks am np o
+clear
+ls
+aws ssm start-session --target i-024b723a172087f46
+curl -v 'https://api.manheim.com/auth/authorization.oauth2?adaptor=manheim_customer&client_id=qdp6ewmug522t9umyxyqydnx&response_type=code&scope=openid&redirect_uri=https://members.manheim.com/gateway/callback'
+exit
+ls
+git add .
+git status
+echo 14.16.0 > .node-version
+cp .* * ../pingfedreate-notifier-dispatch-terraform/
+git status
+git add .
+git commit -m 'Initial commit'
+gitworkid
+source ~/.dotfiles/zsh/functions/gitworkid
+gitworkid
+git commit --amend --reset-author
+echo $EDITOR
+echo $GIT_EDITOR
+git config --global core.editor
+git config --global core.editor 'nvim'
+git remote add git@ghe.coxautoinc.com:Manheim-APITools/pingfederate-notifier-dispatch.git
+git remote add origingit@ghe.coxautoinc.com:Manheim-APITools/pingfederate-notifier-dispatch.git
+git remote add origin git@ghe.coxautoinc.com:Manheim-APITools/pingfederate-notifier-dispatch.git
+git remote fetch
+git remote fetch origin
+git fetch origin
+git push origin
+git push --set-upstream origin main
+npm init
+npm install -g npm
+ls
+ls
+ls
+ls
+docker buildx .
+docker build -t lambda-test .
+docker build -t lambda-test .
+docker build -t lambda-test .
+ls
+docker images
+docker rmi ghcr.io/dkolb/minecraft
+docker rmi ghcr.io/dkolb/minecraft*
+docker rmi ghcr.io/dkolb/minecraft-backup
+docker rmi ghcr.io/dkolb/minecraft-backup
+docker rmi ghcr.io/dkolb/minecraft-backup:edge
+docker clean
+docker images
+docker prune
+docker rmi --prune
+docker images
+docker rmi public.ecr.aws/lambda/nodejs:12
+docker images
+docker build -t local/pfnot:edge .
+docker images
+docker build -t local/pfnot:edge .
+docker build -t local/pfnot:edge --push .
+docker build -t local/pfnot:edge --output=local .
+ls
+docker build -t local/pfnot:edge --load .
+docker images
+docker run --rm -p 9000:8080 local/pfnot:edge
+ls\
+docker images
+docker build -t local/pfnot:edge --load .
+docker run --rm -p 9000:8080 local/pfnot:edge
+docker build -t local/pfnot:edge --load .
+docker run --rm -p 9000:8080 local/pfnot:edge
+docker build -t local/pfnot:edge --load . && docker run --rm -p 9000:8080 local/pfnot:edge 
+ls
+dig @192.168.86.80 zenuc.home.krinchan.com
+kubectl get pods
+kubectl get pods -A
+kubectl get services -n pihole
+dig @192.168.86.81 zenuc.home.krinchan.com
+docker build -t local/pfnot:edge --load .
+docker build -t local/pfnot:edge --load .
+git status
+ls
+ls
+l
+sls
+ls
+git status
+git add .
+git commit -m 'Initial commit.'
+git push origin
+ls
+git status
+git add .
+git commit --amend
+\:q
+git push origin --force
+ghe repo view --web
+brew update && brew upgrade gh
+ghe repo view --web
+git commit --allow-empty -m 'Testing ci trigger.'
+git push origin
+git add Jenkinsfile
+git commit --amend 
+git rebase --interactive
+git rebase --interactive HEAD~1
+git rebase --abort
+git rebase --interactive HEAD~1
+git rebase --interactive HEAD~3
+git rebase --interactive HEAD~2
+git push origin --force
+git show
+git add . && git commit --amend --no-edit && git push origin --force
+git config remote.origin.url
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+ls ~
+json=$(cat ~/test.json)
+echo "$json" | jq '"export SOME_VAR=\(.Credentials.SecretAccessKey)"'
+echo "$json" | jq '"export SOME_VAR=\(.Credentials.SecretAccessKey)"' | sed -e 's/"//g'
+bash
+echo "$json" jq '"\(.Credentials.SecretAccessKey)"'
+echo "$json" | jq '"\(.Credentials.SecretAccessKey)"'
+bash
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+git add . && git commit --amend --no-edit && git push origin --force
+npm install
+ls
+cd ..
+ls
+ls
+mv pingfedreate-notifier-dispatch-terraform pingfederate-notifier-dispatch-terraform
+cd pingfederate-notifier-dispatch-terraform
+ls
+vide .
+vide
+lsa
+exit
+cd /Users/david.kolb/cais/Manheim-APITools/pingfederate-notifier-dispatch-terraform/
+ls
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+./plan_for_dev.sh
+ls -a
+cat .gitignore
+ls
+git status
+git status
+ls
+export TF_VAR_ecr_image_tag=''
+./plan_for_dev.sh | bat
+export TF_VAR_ecr_image_tag='GOOBLEGOOK'
+./plan_for_dev.sh | bat
+export TF_VAR_ecr_image_tag='GOOBLEGOOK'
+ls
+git status
+git add .
+git commit -m 'Initial commit of terraform and code.'
+cat .terraform.lock.hcl
+git push origin
+ls
+ls
+ls
+ls
+git status
+git add Jenkinsfile
+git commit --amend && git push origin --force
+git add Jenkinsfile && git commit --amend && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+cat .terraform-version
+git status
+git add terraform/lambda.tf
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+tfenv which
+tfenv version-name
+git add Jenkinsfile && git commit --amend --no-edit && git push origin --force
+ls
+git add . && git commit --amend --no-edit && git push origin --force
+exit
+cd
+ls
+pass ls 
+pass ls Manheim/Ping/AdminUser/ProdPassword
+curl -v 'https://auth-perf.awsmancs.manheim.com/as/authorization.oauth2?adaptor=manheim_customer&client_id=0447f2ef8b64193f5466d0fe376cd0d7&response_type=code&redirect_uri=https://duckrails-integration5.awsmetnp.manheim.com/callback&scope=inventory:internal%20eventer:trusted%20openid%20profile%20eventer:admin'
+curl -v 'https://auth-perf.awsmancs.manheim.com/as/authorization.oauth2?adaptor=manheim_customer&client_id=0447f2ef8b64193f5466d0fe376cd0d7&response_type=code&redirect_uri=https://duckrails-integration5.awsmetnp.manheim.com/callback&scope=inventory:internal%20eventer:trusted%20openid%20profile%20eventer:admin' | less
+curl -v 'https://auth-perf.awsmancs.manheim.com/as/authorization.oauth2?adaptor=manheim_customer&client_id=0447f2ef8b64193f5466d0fe376cd0d7&response_type=code&redirect_uri=https://duckrails-integration5.awsmetnp.manheim.com/callback&scope=inventory:internal%20eventer:trusted%20openid%20profile%20eventer:admin' | less
+curl -v 'https://auth-perf.awsmancs.manheim.com/as/authorization.oauth2?adaptor=manheim_customer&client_id=0447f2ef8b64193f5466d0fe376cd0d7&response_type=code&redirect_uri=https://duckrails-integration5.awsmetnp.manheim.com/callback&scope=inventory:internal%20eventer:trusted%20openid%20profile%20eventer:admin'
+ls
+ls
+cd cais/Manheim-APITools/manheim-pingfederate-server-profile/
+ls
+cd local_work
+ls
+./run_local.sh -e perf
+./run_local.sh -e perf
+pass ls
+ls
+pass ls Manheim/Ping/DB/Prod/Password
+pass ls Manheim/Ping/DB/Prod/User
+cd ..
+vide
+cd local_work
+./run_local.sh -e perf
+myalks am p o
+aws ssm start-session --target i-0d888b57458c95a66
+ls
+exit
+exit
+export AWS_REGION=us-east-1
+ssmsh
+git status
+git add .
+git log
+git commit -m '[US553725] Publish SNS topic arn to SSM param.'
+git push origin
+cd ~/.dotfiles
+ls
+todo
+brew search todo
+npm install -g Hypercubed/todo-md
+todo-md
+npm rehash
+todo-md
+todo
+npm -g uninstall todo-md
+cd /Users/david.kolb/cais/Manheim-APITools/manheim-pingfederate-docker/
+cd /Users/david.kolb/cais/Manheim-APITools/manheim-pingfederate-docker/
+ls
+cp ./plan_for_dev.sh ../pingfederate-notifier-dispatch-terraform/
+git status
+git diff
+git logs
+git log
+git commit -m '[US553725] Tag ssm param.'
+git add .
+git commit -m '[US553725] Tag ssm param.'
+git push origin
+ls
+exit
+vide
+ls
+git status
+git fetch
+git status
+git pull origin --ff-only
+git status
+tmux attach
+exit
+aws ssm start-session --target 
+aws ssm start-session --target i-024b723a172087f46
+myalks am np o
+aws ssm start-session --target i-024b723a172087f46
+ls
+cd ..
+cd cais/Manheim-APITools/manheim-pingfederate-server-profile/
+ls
+cd local_work
+ls
+git checkout v10-dev
+git checkout dev-v10
+git status
+git fetch
+./run_local.sh -e prod
+exit
+ls
+cd
+cd .dotfiles
+ls
+cd zsh
+ls
+cat .zshrc
+nvim .zshrc
+exit
+npm install mocha
+npm install -g npm@7.6.3
+npm install chai
+rm -rf node_modules
+npm install mocha chai sinon --save-dev
+npm install aws-sdk
+ls
+cd node_modules
+ls
+cd aws-sdk
+ls
+cat package.json
+cd ..
+ls
+cd ..
+ls
+npm install axios
+npx test
+npm test
+npx mocah
+npm mocha
+npx mocha
+npx mocha
+npx mocha
+npx mocha
+npm test
+docker build -t local/pfnd:latest .
+history | grep docker build
+history | grep 'docker build'
+docker build -t local/pfnd:latest --push .
+docker build -t local/pfnd:latest --load .
+dbx
+autoload ~/.config/zsh/functions/dbx*
+docker images
+docker rmi local/pfnot 9ba8f994567d
+docker images
+docker rmi local/pfnot:edge 9ba8f994567d
+docker images
+autoload ~/.config/zsh/functions/d*
+drrm local/pfnd
+drrm -p 9000:8080 local/pfnd
+dbxl
+dbxl -t local/pfnd:latest .
+docker build --local
+docker buildls
+ls
+source ~/.config/zsh/functions/dbxl
+dbxl local/pfnd:latest .
+docker build -t local/pfnd:latest --local .
+docker build -t local/pfnot:edge --load . && docker run --rm -p 9000:8080 local/pfnot:edge 
+source ~/.config/zsh/functions/dbxl
+dbxl local/pfnd:latest .
+docker run --rm -p 9000:8080 local/pfnot:edge
+docker run --rm -p 9000:8080 local/pfnd
+exit
+function test() {\
+echo $0\
+echo $1\
+echo $2\
+echo ${#}\
+echo $@\
+}
+test first second third
+exit
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"james":"test"}'
+npm test
+npm test
+npm test
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm test | bat
+npm dbg-test | bat
+npm dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run dbg-test
+npm run test
+node
+node
+npm install axios-logger
+ssmsh
+myalks am np o
+npm test
+npm test
+npm test
+npm test
+npm test
+curl https://api.example.com/oauth2/token.oauth2
+curl https://api.example.com/oauth2/token.oauth2
+npm test
+npm test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm install log4js-node
+npm install log4js
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run test
+npm run test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+node
+npm run test
+npm run test
+npm run test
+npm run test
+npm install --save-dev chai-as-promised
+npm install --save-dev chai-as-promised
+npm run test
+npm uninstall chai-as-promised
+npm uninstall chai-as-promised
+npm run test
+kjk
+kjk
+npm run test
+npm run test
+npm run test
+npm run test
+exit
+history | grep curl
+history
+history --help
+man history
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"james":"test"}'
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"james":"test"}'
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"james":"test"}'
+npm test
+npm install axios-mock-adapter --save-dev
+npm install --save-dev aws-lambda-mock-context
+npm test
+ls
+npx mocha
+ls test/
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm install axios-oauth-clinet axios-token-interceptor
+npm install --save axios-oauth-client axios-token-interceptor
+npm install --save aws-xray-sdk-core
+npm uninstall --save aws-sdk
+ls
+npm install --save-dev aws-sdk
+myalks am np o
+ssmsh
+nodejs
+node
+dbxl -t local/pfnd:latest .
+dbxl local/pfnd:latest .
+ls
+ls -ltra
+drrm --port 9000:8080 local/pfnd
+drrm --p 9000:8080 local/pfnd
+drrm -p 9000:8080 local/pfnd
+npm install --save-dev aws-sdk-mock
+npm test
+npm test
+exit
+cd
+ls
+nvim lock-repo-list.sh
+exit
+cd
+ls
+curl -s https://api.github.ove.local/users/dkolb1/repos?per_page=200 | ruby -rubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["clone_url"]} ]}'
+curl -s https://api.github.ove.local/users/dkolb1/repos?per_page=200 | ruby -rrubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["clone_url"]} ]}'
+curl -s 'https://api.github.ove.local/users/dkolb1/repos?per_page=200' | ruby -rrubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["clone_url"]} ]}'
+curl -s 'https://api.github.ove.local/users/dkolb1/repos?per_page=200' 
+ls
+mkdir test
+curl -s 'https://api.github.ove.local/users/dkolb1/repos?per_page=200' 
+curl -s 'https://api.github.ove.local/users/dkolb1/repos?per_page=200' -v
+curl -s -vvv 'https://api.github.ove.local/users/dkolb1/repos?per_page=200'
+curl -s 'https://api.github.ove.local/api/v3/users/dkolb1/repos?per_page=200'
+curl -s 'https://github.ove.local/api/v3/users/dkolb1/repos?per_page=200'
+curl 'https://github.ove.local/api/v3/users/dkolb1/repos?per_page=200'
+curl 'http://github.ove.local/api/v3/users/dkolb1/repos?per_page=200'
+curl 'http://github.ove.local/api/v3/users/dkolb1/repos?per_page=200' | head -15
+curl 'http://github.ove.local/api/v3/users/dkolb1/repos?per_page=200' | jq '.[].full_name'
+curl 'http://github.ove.local/api/v3/users/dkolb1/repos?per_page=200' | jq '.[].full_name' | sed 's/"//g'
+curl 'http://github.ove.local/api/v3/users/dkolb1/repos?per_page=200' | jq '.[].full_name' | sed 's/"//g' > repos_to_delete
+wc -l repo
+wc -l repos_to_delete
+jq --version
+curl 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' | jq -r 'toEntries[]'
+curl 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' | jq -r 'to_entries[]'
+curl 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' | jq -r 'to_entries[] | .key'
+curl 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' | jq -r 'to_entries[] | .key[]'
+curl 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' 
+curl -v 'https://pages.ghe.coxautoinc.com/MAN-Tooling/re-github-migration/stats/org_stats_auction2.json' 
+ls
+ls
+cd Do
+cd Downloads
+ls
+cat org_stats_dkolb1.json | jq 'to_entries[]'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked then A else B'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked then del(.) end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked then del(.) else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked then "a" else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | .value.locked'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked then "" else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then "" else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then "" else . end' | grep 'locked": true'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then del(.) else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == false then del(.) else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then del(.) else . end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then del(.) else . end | \(.key)'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then del(.) else .key end'
+cat org_stats_dkolb1.json | jq 'to_entries[] | if .value.locked == true then del(.) else .key end' | sed 's/^"//;s/"$//' 
+ls
+zsh ../lock-repo-list.sh org_stats_dkolb1.json
+zsh ../lock-repo-list.sh org_stats_dkolb1.json
+zsh ../lock-repo-list.sh org_stats_dkolb1.json
+man curl
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb
+cd ~/cais/David-Kolb
+git clone git@github.ove.local:dkolb1/innovation-vipstorm
+git clone http://github.ove.local/dkolb1/innovation-vipstorm
+ls
+cd -
+zsh ../lock-repo-list.sh org_stats_dkolb1.json dkolb1 dkolb1
+cd ..
+ls
+mv lock-repo-list.sh delete-repo-list.sh
+ls
+ls
+cp delete-repo-list.sh list-repos.sh
+ls
+ls
+zsh list-repos.sh ./Downloads/org_stats_auction2.json
+zsh list-repos.sh ./Downloads/org_stats_auction2.json > a20_unlocked.txt
+zsh list-repos.sh ./Downloads/org_stats_auction2.json > a20_unlocked.txt
+open.
+open .
+kkexit
+exit
+cd ~/.config/zsh
+nvim .
+myalks e np o
+ssmsh
+echo "NHh0OXIyMndzc2RqbmR2d2FmNGRxeWduOmthOE5RbVZ3U3M=" | base64 -D
+ls
+exit
+ls
+cd cais/Manheim-APITools
+ls
+cd pingfederate-notifier-dispatch
+git status
+git idff
+ls
+ls test/
+vide
+exit
+rm -rf ~/.aws/credentials
+ls
+aws s3 cp s3://ams-templates/email/forgot-username-template.vm .
+myalks e p o
+myalks e p o
+aws s3 cp s3://ams-templates/email/forgot-username-template.vm .
+exit
+exit
+nvim ~/.dotfiles/nvim/settings/00-Plug.vim
+exit
+ls
+npm test
+npm test
+npm test
+npm test
+npm test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+curl -v 'https://stream.nightride.fm/nightride.m4a'
+curl -v 'https://stream.nightride.fm/nightride.m4a'
+curl -v 'https://stream.nightride.fm/nightride.ogg'
+curl -v 'https://stream.nightride.fm/'
+curl -v 'https://nightride.fm'
+ls
+git status
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git status
+git add .
+git commit -m '[US553725] Completed test suite.'
+git push origin
+node
+ls
+git status
+git add .
+git commit -m '[US553725] Completed handler.'
+git push origin
+node
+node run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run dbg-test
+npm run test
+npm run test
+npm run test
+npm run test
+node
+npm run test
+node
+npm run test
+npm run test
+npm run test
+npm run test
+ls
+git status
+git add .
+ls
+nvim Jenkinsfile
+vide
+exit
+https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash
+curl https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash
+curl https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash
+exit

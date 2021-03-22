@@ -90,8 +90,8 @@ Plug 'elixir-lang/vim-elixir'
 "Dockerfile syntax
 Plug 'ekalinin/Dockerfile.vim'
 
-" Solarized color schemes.
-Plug 'altercation/vim-colors-solarized'
+" Gruvbox Hard
+Plug 'morhetz/gruvbox'
 
 " Tabular helps with pretty-aligning stuff like hashes.
 Plug 'godlygeek/tabular'

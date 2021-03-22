@@ -1,0 +1,4 @@
+#!env zsh
+function drsh() {
+  docker run --rm -it $1 ${2:-/bin/sh}
+}

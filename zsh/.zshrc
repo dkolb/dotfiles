@@ -12,6 +12,9 @@ autoload $ZDOTDIR/functions/*
 # Make pinentry work because it's dumb AF for some reason.
 export GPG_TTY=$(tty)
 
+# Fix ls being bland.
+export CLICOLOR=1
+
 # Source private environment (and machine specific stuff if needed)
 if [[ -f "${HOME}/.dotfiles/private/zsh/env" ]]; then
   source "${HOME}/.dotfiles/private/zsh/env"

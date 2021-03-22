@@ -1,0 +1,4 @@
+#!env zsh
+function drrm() {
+  docker run --rm $@
+}

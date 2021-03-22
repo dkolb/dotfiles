@@ -1,0 +1,4 @@
+#!env zsh
+function dbxl() {
+  docker build -t $1 --load $2
+}
