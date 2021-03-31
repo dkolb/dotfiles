@@ -1,5 +1,6 @@
 #!env zsh
 function vide {
+  set -x
   local working_dir="$PWD"
   local open_file="false"
   if (( ${#} > 0 )); then
@@ -10,6 +11,8 @@ function vide {
       open_file="true"
     fi
   fi
+
+  working_dir="$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
 
   local tmux_cmd=("tmux")
 
@@ -26,9 +29,11 @@ function vide {
     tmux_cmd+=("$@")
   fi
 
-  tmux_cmd+=(";" "split-window" "-v" "-p" "30" ";")
+  tmux_cmd+=(";" "split-window" "-v" "-p" "30" "-c" "$working_dir" ";")
 
   echo $tmux_cmd
+
+  set +x
 
   $tmux_cmd
 
