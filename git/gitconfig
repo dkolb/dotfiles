@@ -23,11 +23,6 @@
   cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
   #cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [core]
 	excludesFile = ~/.gitignore
 	editor = nvim
@@ -40,5 +35,12 @@
 	program = gpg
 [user]
 	signingkey = cfcbdc8d8ad3a3fd6897428e3bac97a851b61a04
+	name = David.Kolb@coxautoinc.com
+	email = David.Kolb@coxautoinc.com
 [delta]
   syntax-theme = Solarized (Dark)
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

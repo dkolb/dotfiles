@@ -2,6 +2,7 @@
 fpath=("$ZDOTDIR/functions" $fpath)
 
 path=(
+  "$HOME/bin"
   '/usr/local/sbin'
   '/usr/local/bin'
   $path
@@ -65,3 +66,5 @@ zinit wait lucid for \
   blockf "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/docker-compose/_docker-compose" \
   atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
+
+alias dos2unix_r='find . -type f -exec grep -Iq . {} \; -print0 | xargs -0 dos2unix'
