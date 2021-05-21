@@ -68,3 +68,4 @@ zinit wait lucid for \
     zsh-users/zsh-autosuggestions
 
 alias dos2unix_r='find . -type f -exec grep -Iq . {} \; -print0 | xargs -0 dos2unix'
+

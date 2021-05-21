@@ -39,8 +39,4 @@ alias gplr='git pull origin --rebase'
 alias dos2unix_r='find . -type f -exec grep -Iq . {} \; -print0 | xargs -0 dos2unix'
 alias kc='kubectl'
 
-#pingidsdk
-alias pingidsdk-int1='java -jar ~/bin/pingidsdktools.jar -a ***REMOVED***f'
-alias pingidsdk-prod='java -jar ~/bin/pingidsdktools.jar -a ***REMOVED*** -f ~/.pingidsdk-prod-man.properties'
-
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
