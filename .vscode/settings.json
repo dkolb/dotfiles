@@ -1,5 +1,10 @@
 {
-  "files.associations": {
-    "**/ansibles/**/*.yaml": "ansible-advanced",
-  }
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-vars.json": "/**/ansibles/**/playbooks/**/inventory/group_vars/*.yaml",
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json": "/**/ansibles/**/playbooks/roles/**/tasks/*.yaml",
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-lint.json": "/**/ansibles/.ansible-lint",
+    "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json": "/**/ansibles/**/playbooks/site.yaml",
+  },
+  "ansible.validate.run": "onSave",
+  "ansible.validate.enable": false,
 }

@@ -1,3 +1,0 @@
----
-- name: Install Git LFS
-  command: git lfs install

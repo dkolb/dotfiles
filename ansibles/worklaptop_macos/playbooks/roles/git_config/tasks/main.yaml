@@ -1,0 +1,30 @@
+---
+- name: Link gitconfig
+  file:
+    path: '{{ ansible_user_dir }}/.gitconfig'
+    src: '{{ ansible_user_dir }}/.dotfiles/git/gitconfig'
+    state: link
+    force: yes
+- name: Get current signing key
+  community.general.git_config:
+    name: user.signingkey
+    scope: global
+  register: current_signing_key
+- name: Get keybase fingerprint
+  ansible.builtin.shell: |
+    set -o pipefail &&
+    keybase pgp list |
+    awk -F: '/PGP Fingerprint:/{print $2}' |
+    sed 's/ //g'
+  register: key_fingerprint
+  changed_when: "{{ key_fingerprint.stdout }} != {{ current_signing_key.config_value }}"
+- name: Enable signing
+  community.general.git_config:
+    name: commit.gpgsign
+    scope: global
+    value: "true"
+- name: Set signing key
+  community.general.git_config:
+    name: user.signingkey
+    scope: global
+    value: "{{ key_fingerprint.stdout }}"

@@ -1,0 +1,30 @@
+---
+- name: Detect first time
+  ansible.builtin.stat:
+    path: '{{ ansible_user_dir }}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Install gnu packages
+  become: yes
+  ansible.builtin.package:
+    name:
+      - pinentry-curses
+      - gpg-agent
+      - gpg
+
+# GNUPG adjustments.
+- name: Make sure .gnupg/ exists
+  ansible.builtin.file:
+    path: '{{ ansible_user_dir }}/.gnupg/'
+    state: directory
+    mode: 'u=rwx,g=,o='
+- name: Make sure gnupg-agent.conf exists
+  ansible.builtin.file:
+    path: '{{ ansible_user_dir }}/.gnupg/gpg-agent.conf'
+    state: touch
+    mode: 'u=rw,g=,o='
+- name: Ensure pinentry is configured.
+  ansible.builtin.lineinfile:
+    path: '{{ ansible_user_dir }}/.gnupg/gpg-agent.conf'
+    regexp: '^pinentry-program'
+    line: 'pinentry-program /usr/bin/pinentry'

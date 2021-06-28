@@ -1,0 +1,43 @@
+---
+- name: Add Homebrew zsh as legal shell.
+  become: yes
+  ansible.builtin.lineinfile:
+    line: /usr/local/bin/zsh
+    path: /etc/shells
+
+- name: Set zsh as default shell for {{ user }}
+  become: yes
+  user:
+    name: "{{ user }}"
+    shell: /usr/local/bin/zsh
+
+- name: Fix zsh completion directory permissions.
+  become: yes
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "u=rwx,g=rx,o=rx"
+  with_items:
+    - /usr/local/share/zsh/site-functions
+    - /usr/local/share/zsh/
+- name: Set ZDOTFILE and source
+  file:
+    path: "{{ ansible_user_dir }}/.zshenv"
+    src: "{{ ansible_user_dir }}/.dotfiles/zsh/zinit_zshenv"
+    state: link
+    force: yes
+- name: Link .config/zsh directory
+  file:
+    path: "{{ ansible_user_dir }}/.config/zsh"
+    src: "{{ ansible_user_dir }}/.dotfiles/zsh"
+    state: link
+    force: yes
+- name: Clone zinit repository
+  ansible.builtin.git:
+    repo: https://github.com/zdharma/zinit.git
+    dest: '{{ ansible_user_dir }}/.zinit/bin'
+    version: master
+# - name: Clone zgenom repo
+#   ansible.builtin.git:
+#     repo: https://github.com/tarjoilija/zgen.git
+#     dest: "{{ ansible_user_dir }}/.zgen"

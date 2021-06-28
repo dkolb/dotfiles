@@ -1,0 +1,24 @@
+---
+- name: Detect first time
+  ansible.builtin.stat:
+    path: '{{ ansible_user_dir }}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Install prerequistes
+  become: yes
+  ansible.builtin.package:
+    name:
+      - tmux
+
+- name: Link tmux.conf
+  ansible.builtin.file:
+    path: '{{ ansible_user_dir }}/.tmux.conf'
+    src: '{{ ansible_user_dir }}/.dotfiles/tmux/tmux.conf'
+    state: link
+
+- name: Install tpm
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: '{{ ansible_user_dir }}/.tmux/plugins/tpm'
+    version: master
+  notify: Install tpm Plugins

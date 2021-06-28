@@ -1,0 +1,25 @@
+---
+- name: Get keybase fingerprint
+  ansible.builtin.shell: |
+    set -o pipefail && keybase pgp list |
+    awk -F: '/PGP Fingerprint:/{print $2}' |
+    sed 's/ //g'
+  register: key_fingerprint
+  changed_when: true
+- name: Check key is already imported
+  ansible.builtin.shell: set -o pipefail && gpg --list-secret-keys | grep -i "{{ key_fingerprint.stdout }}"
+  register: key_exists
+  failed_when: key_exists.rc == 2
+  changed_when: true
+- name: Get public key
+  ansible.builtin.shell: set -o pipefail && keybase pgp export | gpg --import
+  when: key_exists.rc == 1
+- name: Import private key 
+  ansible.builtin.shell: |
+    set -o pipefail &&
+    keybase pgp list |
+    awk -F: '/Keybase Key ID:/{print $2}' |
+    sed 's/ //g' |
+    xargs keybase pgp export --secret -q |
+    gpg --import --allow-secret-key-import
+  when: key_exists.rc == 1

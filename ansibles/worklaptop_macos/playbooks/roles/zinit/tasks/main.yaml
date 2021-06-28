@@ -1,0 +1,18 @@
+---
+- name: Set zshenv to zinit zshenv
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.zshenv"
+    src: "{{ ansible_user_dir }}/.dotfiles/zsh/zinit_zshenv"
+    state: link
+    force: yes
+- name: Link .config/zsh directory
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.config/zsh"
+    src: "{{ ansible_user_dir }}/.dotfiles/zsh"
+    state: link
+    force: yes
+- name: Clone zinit repo
+  ansible.builtin.git:
+    repo: https://github.com/zdharma/zinit.git
+    dest: "{{ ansible_user_dir }}/.zinit/bin"
+    version: master

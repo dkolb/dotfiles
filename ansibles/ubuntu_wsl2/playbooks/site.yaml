@@ -1,0 +1,17 @@
+---
+- name: Setup Basics
+  hosts: all
+  vars:
+    user: dkub
+  gather_facts: true
+  become: false
+  roles:
+    - role: prereqs
+    - role: zsh
+    - role: git
+    - role: gnupg
+    - role: keybase
+    - role: nvim
+    - role: tmux
+      tags: [ tmux ]
+    - role: finalize_install

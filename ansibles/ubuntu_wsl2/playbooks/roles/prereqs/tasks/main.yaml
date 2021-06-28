@@ -1,0 +1,51 @@
+---
+- name: Detect first time
+  ansible.builtin.stat:
+    path: '{{ ansible_user_dir }}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Update base packages
+  become: yes
+  ansible.builtin.apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400 #One day`
+
+- name: Install prerequistes
+  become: yes
+  ansible.builtin.package:
+    name:
+      - ansible
+      - bat
+      - ca-certificates
+      - cmake
+      - curl
+      - fish
+      - git
+      - groff
+      - jq
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libxml2-dev
+      - libxslt1-dev
+      - libyaml-dev
+      - neovim
+      - pass
+      - pkg-config
+      - python-is-python3
+      - python3-pip
+      - python3.9
+      - silversearcher-ag
+      - sshpass
+      - zip
+      - zlib1g-dev
+
+- name: Esnsure {{ item }} exists
+  ansible.builtin.file:
+    path: '{{ item }}'
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+  with_items:
+    - '{{ ansible_user_dir }}/bin'
+    - '{{ ansible_user_dir }}/.config'

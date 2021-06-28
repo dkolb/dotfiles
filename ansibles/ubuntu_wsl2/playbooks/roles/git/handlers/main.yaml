@@ -1,0 +1,4 @@
+---
+- name: Install Git LFS
+  command: git lfs install
+  tags: [ skip_ansible_lint ] #git module does not support his command

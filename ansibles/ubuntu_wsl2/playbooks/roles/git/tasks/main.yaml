@@ -1,0 +1,48 @@
+---
+- name: Detect first time
+  stat:
+    path: '{{ ansible_user_dir }}/.config/dkub-dotfiles/dotfiles_and_software_has_run'
+  register: first_run_stat
+
+- name: Install git and git-lfs
+  become: yes
+  package:
+    name:
+      - git
+      - git-lfs
+
+# Install GH CLI
+- name: Add ghcli repo key
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 2CA32056ED206CB81F44A8CAC99B11DEB97541F0
+- name: Add ghecli repository
+  become: yes
+  apt_repository:
+    repo: deb https://cli.github.com/packages {{ ansible_distribution_release }} main
+    update_cache: yes
+- name: Install ghcli
+  become: yes
+  package:
+    name: gh
+
+- name: Create Directories
+  file:
+    path: '{{ item }}'
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+  with_items:
+    - '{{ ansible_user_dir }}/bin'
+    - '{{ ansible_user_dir }}/.config'
+    - '{{ ansible_user_dir }}/.local/share/nvim/site/autoload'
+
+- name: Create soft links to place configurations
+  file:
+    path: '{{ item.path }}'
+    src: '{{ item.src }}'
+    state: link
+    force: yes
+  with_items:
+    - src: '{{ ansible_user_dir }}/.dotfiles/git/gitconfig'
+      path: '{{ ansible_user_dir }}/.gitconfig'
