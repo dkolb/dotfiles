@@ -11,7 +11,7 @@
     - role: zgen
     - role: nvim
     - role: git_config
-    - role: gpg-keys-from-keybase
+#   - role: gpg-keys-from-keybase
     - role: password-store
     - role: private-dotfiles
     - role: iterm2

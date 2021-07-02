@@ -17,7 +17,7 @@
     awk -F: '/PGP Fingerprint:/{print $2}' |
     sed 's/ //g'
   register: key_fingerprint
-  changed_when: "{{ key_fingerprint.stdout }} != {{ current_signing_key.config_value }}"
+  changed_when: key_fingerprint.stdout != current_signing_key.config_value
 - name: Enable signing
   community.general.git_config:
     name: commit.gpgsign
@@ -28,3 +28,4 @@
     name: user.signingkey
     scope: global
     value: "{{ key_fingerprint.stdout }}"
+    
