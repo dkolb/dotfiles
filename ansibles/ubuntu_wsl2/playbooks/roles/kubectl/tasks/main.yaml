@@ -1,0 +1,13 @@
+---
+- name: "k8s signing key"
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+- name: "k8s repo"
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+- name: "install kubectl"
+  become: yes
+  ansible.builtin.package:
+    name: kubectl

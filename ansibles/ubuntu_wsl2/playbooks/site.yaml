@@ -14,4 +14,5 @@
     - role: nvim
     - role: tmux
       tags: [ tmux ]
+    - role: kubectl
     - role: finalize_install
