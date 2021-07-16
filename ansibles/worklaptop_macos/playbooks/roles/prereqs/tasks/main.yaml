@@ -12,7 +12,9 @@
     - gnupg2
     - golang
     - jenv
+    - jq
     - neovim
+    - pass
     - pinentry-mac
     - python3
     - rbenv
@@ -27,8 +29,13 @@
 - name: Install brew casks
   community.general.homebrew_cask:
     name:
+    - adoptopenjdk
+    - apache-directory-studio
+    - aws-vpn-client
     - docker
+    - mactex
     - meld
+    - postman
     - session-manager-plugin
     - intellij-idea-ce
     - visual-studio-code

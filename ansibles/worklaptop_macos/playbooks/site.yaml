@@ -18,3 +18,5 @@
     - role: nerdfonts
     - role: tmux
       tags: [ tmux ]
+
+# pip3 install awscli
